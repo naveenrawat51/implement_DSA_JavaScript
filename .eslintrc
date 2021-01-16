@@ -1,0 +1,57 @@
+{
+    "extends": "airbnb-base",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "legacyDecorators": true
+      }
+    },
+    "plugins": ["prettier"],
+    "env": {
+      "es6": true,
+      "serviceworker": true,
+      "browser": true,
+      "commonjs": true,
+      "node": true,
+      "jquery": true
+    },
+    "globals": {
+      "$": true,
+      "Granite": true
+    },
+    "rules": {
+      "arrow-parens": 0,
+      "quotes": [1, "single"],
+      "curly": ["error", "all"],
+      "eqeqeq": 1,
+      "max-len": 0,
+      "new-cap": 0,
+      "no-unused-vars": 1,
+      "no-bitwise": 0,
+      "comma-dangle": 0,
+      "spaced-comment": 0,
+      "padded-blocks": 1,
+      "space-in-parens": 0,
+      "object-curly-spacing": 0,
+      "space-before-function-paren": 0,
+      "no-underscore-dangle": 0,
+      "no-shadow": 1,
+      "operator-linebreak": 0,
+      "object-curly-newline": 0,
+      "implicit-arrow-linebreak": 0,
+      "function-paren-newline": 0,
+      "indent": 0,
+      "func-names": 0,
+      "camelcase": 0,
+      "default-case": 0,
+      "import/extensions": 0,
+      "import/no-unresolved": 0,
+      "import/prefer-default-export": 1,
+      "import/no-extraneous-dependencies": 0,
+      "newline-per-chained-call": 0,
+      "no-unused-expressions": 0,
+      "no-unexpected-multiline": 1,
+      "no-plusplus": 0,
+      "consistent-return": 0,
+      "class-methods-use-this": 0
+    }
+  }
