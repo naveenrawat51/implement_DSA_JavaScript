@@ -72,5 +72,5 @@ const array1 = new Myarray();
 array1.push(5);
 array1.push(23);
 array1.push(3);
-console.log(array1.map((element) => element * 2));
-console.log(array1.filter((element) => element > 10));
+array1.map((element) => element * 2);
+array1.filter((element) => element > 10);
