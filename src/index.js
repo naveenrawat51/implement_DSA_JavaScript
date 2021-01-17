@@ -1,5 +1,6 @@
 import './styles/main.scss';
-import { arrayComplexity, arrayImplementation } from './DS_types/array';
+import { arrayComplexity } from './DS_types/array';
+import { stackComplexity } from './DS_types/stack';
 
 const getAllBtn = Array.prototype.slice.call(
     document.querySelectorAll('button')
@@ -9,12 +10,10 @@ const arrayComplexityContainer = document.getElementById(
     'arrayComplexityContainer'
 );
 const complexityDataRowElement = document.getElementById('complexityData');
-const codeSnippetContainerArray = document.getElementById(
-    'codeSnippetContainerArray'
-);
+const codeSnippetContainers = document.querySelectorAll('.codeSnippet');
 
 function generateRowData(data) {
-    let result = `<td><a href="${data.url}">${data.type}</a></td>`;
+    let result = `<td><a target="_blank" href="${data.url}">${data.type}</a></td>`;
     for (let i = 0; i < data.complexityData.length; i++) {
         result += `<td><code class="${data.complexityData[i].color}">${data.complexityData[i].complexity}</code></td>`;
     }
@@ -30,7 +29,6 @@ window.addEventListener('click', (event) => {
                 mainHeading.classList.remove('hide');
                 event.target.classList.add('hide');
                 arrayComplexityContainer.classList.add('hide');
-                codeSnippetContainerArray.classList.add('hide');
             } else {
                 mainHeading.classList.add('hide');
                 if (
@@ -49,12 +47,21 @@ window.addEventListener('click', (event) => {
                 complexityDataRowElement.innerHTML = generateRowData(
                     arrayComplexity
                 );
-                codeSnippetContainerArray.classList.remove('hide');
             }
 
-            if (event.target.value === 'GRAPH') {
+            if (event.target.value === 'STACK') {
                 arrayComplexityContainer.classList.remove('hide');
-                complexityDataRowElement.innerHTML = generateRowData(myData);
+                complexityDataRowElement.innerHTML = generateRowData(
+                    stackComplexity
+                );
+            }
+        });
+
+        codeSnippetContainers.forEach((ele) => {
+            if (ele.getAttribute('data-type') === event.target.value) {
+                ele.classList.remove('hide');
+            } else {
+                ele.classList.add('hide');
             }
         });
     }
