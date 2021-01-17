@@ -1,14 +1,13 @@
 import './styles/main.scss';
 import { arrayComplexity } from './DS_types/array';
 import { stackComplexity } from './DS_types/stack';
+import { linkedListComplexity } from './DS_types/linkedList';
 
 const getAllBtn = Array.prototype.slice.call(
     document.querySelectorAll('button')
 );
 const mainHeading = document.getElementById('mainHeading');
-const arrayComplexityContainer = document.getElementById(
-    'arrayComplexityContainer'
-);
+const complexityContainer = document.getElementById('complexityContainer');
 const complexityDataRowElement = document.getElementById('complexityData');
 const codeSnippetContainers = document.querySelectorAll('.codeSnippet');
 
@@ -20,6 +19,11 @@ function generateRowData(data) {
     return result;
 }
 
+const showComplexity = (complexityData) => {
+    complexityContainer.classList.remove('hide');
+    complexityDataRowElement.innerHTML = generateRowData(complexityData);
+};
+
 window.addEventListener('click', (event) => {
     event.stopPropagation();
     if (event.target.classList.contains('button')) {
@@ -28,7 +32,7 @@ window.addEventListener('click', (event) => {
                 element.classList.remove('hide');
                 mainHeading.classList.remove('hide');
                 event.target.classList.add('hide');
-                arrayComplexityContainer.classList.add('hide');
+                complexityContainer.classList.add('hide');
             } else {
                 mainHeading.classList.add('hide');
                 if (
@@ -42,18 +46,16 @@ window.addEventListener('click', (event) => {
                 }
             }
 
-            if (event.target.value === 'ARRAY') {
-                arrayComplexityContainer.classList.remove('hide');
-                complexityDataRowElement.innerHTML = generateRowData(
-                    arrayComplexity
-                );
-            }
-
-            if (event.target.value === 'STACK') {
-                arrayComplexityContainer.classList.remove('hide');
-                complexityDataRowElement.innerHTML = generateRowData(
-                    stackComplexity
-                );
+            switch (event.target.value) {
+                case 'ARRAY':
+                    showComplexity(arrayComplexity);
+                    return;
+                case 'STACK':
+                    showComplexity(stackComplexity);
+                    return;
+                case 'LINKEDLIST':
+                    showComplexity(linkedListComplexity);
+                    return;
             }
         });
 
