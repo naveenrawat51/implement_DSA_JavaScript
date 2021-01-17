@@ -49,14 +49,14 @@ class Mystack {
     }
 }
 
-const stack1 = new Mystack();
-console.log(stack1.push(200));
-console.log(stack1.push(100));
-console.log(stack1.push(500));
-console.log(stack1.pop());
-console.log(stack1.printStack());
-console.log(stack1.peek());
-console.log(stack1.pop());
-console.log(stack1.pop());
-console.log(stack1.peek());
-console.log(stack1.isEmpty());
+// const stack1 = new Mystack();
+// console.log(stack1.push(200));
+// console.log(stack1.push(100));
+// console.log(stack1.push(500));
+// console.log(stack1.pop());
+// console.log(stack1.printStack());
+// console.log(stack1.peek());
+// console.log(stack1.pop());
+// console.log(stack1.pop());
+// console.log(stack1.peek());
+// console.log(stack1.isEmpty());
