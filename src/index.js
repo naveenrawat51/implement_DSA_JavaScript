@@ -1,5 +1,5 @@
 import './styles/main.scss';
-import { arrayComplexity } from './DS_types/array';
+import { arrayComplexity, arrayImplementation } from './DS_types/array';
 
 const getAllBtn = Array.prototype.slice.call(
     document.querySelectorAll('button')
@@ -9,6 +9,9 @@ const arrayComplexityContainer = document.getElementById(
     'arrayComplexityContainer'
 );
 const complexityDataRowElement = document.getElementById('complexityData');
+const codeSnippetContainerArray = document.getElementById(
+    'codeSnippetContainerArray'
+);
 
 function generateRowData(data) {
     let result = `<td><a href="${data.url}">${data.type}</a></td>`;
@@ -27,6 +30,7 @@ window.addEventListener('click', (event) => {
                 mainHeading.classList.remove('hide');
                 event.target.classList.add('hide');
                 arrayComplexityContainer.classList.add('hide');
+                codeSnippetContainerArray.classList.add('hide');
             } else {
                 mainHeading.classList.add('hide');
                 if (
@@ -45,11 +49,11 @@ window.addEventListener('click', (event) => {
                 complexityDataRowElement.innerHTML = generateRowData(
                     arrayComplexity
                 );
+                codeSnippetContainerArray.classList.remove('hide');
             }
 
             if (event.target.value === 'GRAPH') {
                 arrayComplexityContainer.classList.remove('hide');
-                console.log('naveen: ', generateRowData(myData));
                 complexityDataRowElement.innerHTML = generateRowData(myData);
             }
         });
