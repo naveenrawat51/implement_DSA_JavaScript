@@ -14,14 +14,14 @@
     <div id="homeButtonContainer" class="go-to-home" style="display: flex; flex-direction: column; width: 300px; justify-content: space-between; position: absolute;">
         <button class="button go-home hide" style="background-color: blue;" value="Go To HOME">Go To HOME</button>
     </div>
-    <div id="buttonContainer" style="display: flex; flex-direction: column; width: 400px; margin: auto; justify-content: space-between;">
+    <div id="buttonContainer" style="display: flex; flex-direction: column; max-width: 400px; margin: auto; justify-content: space-between;">
     <button class="button ds-btn" value="ARRAY">ARRAY</button>
-    <button class="button ds-btn" value="HASH TABLE">HASH TABLE</button>
+    <!-- <button class="button ds-btn" value="HASH TABLE">HASH TABLE</button>
     <button class="button ds-btn" value="LINKEDLIST">LINKEDLIST</button>
     <button class="button ds-btn" value="STACK">STACK</button>
     <button class="button ds-btn" value="QUEUE">QUEUE</button>
     <button class="button ds-btn" value="BINARY SEARCH TREE">BINARY SEARCH TREE</button>
-    <button class="button ds-btn" value="GRAPH">GRAPH</button>
+    <button class="button ds-btn" value="GRAPH">GRAPH</button> -->
 </div>
 
 <div id="arrayComplexityContainer" style="text-align: center;" class="hide">
@@ -58,16 +58,73 @@
     </tbody></table>
 </div>
 
-<!-- <div id="data">
-    <pre><code class="language-javascript">
-        const mainHeading = document.getElementById('mainHeading');
-const arrayComplexityContainer = document.getElementById('arrayComplexityContainer');
-const complexityDataRowElement = document.getElementById('complexityData');
-
+<!-- array code starts here -->
+<div id="codeSnippetContainerArray" class="hide codeSnippet">
+    <pre><code class="language-javascript" >
+      class Myarray {
+        constructor(size) {
+            (this.data = {}), (this.length = 0);
+    
+            for (let i = 0; i &lt; size; i++) {
+                this.data[i] = undefined;
+                this.length++;
+            }
+        }
+    
+        push(item) {
+            this.data[this.length] = item;
+            this.length += 1;
+            return this.data;
+        }
+    
+        pop() {
+            if (this.length) {
+                delete this.data[this.length - 1];
+                this.length -= 1;
+                console.log(this.data, this.length);
+                return this.data;
+            }
+            return null;
+        }
+    
+        map(callback) {
+            if (typeof callback === 'Function' || typeof callback === 'function') {
+                const result = {};
+                for (let i = 0; i &lt; this.length; i++) {
+                    result[i] = callback(this.data[i], i, this.data);
+                }
+                return (this.data = result);
+            }
+            return null;
+        }
+    
+        filter(callback) {
+            if (typeof callback === 'Function' || typeof callback === 'function') {
+                const result = {};
+                let counter = 0;
+                for (let i = 0; i &lt; this.length; i++) {
+                    if (callback(this.data[i], i, this.data)) {
+                        result[counter] = this.data[i];
+                        counter++;
+                    }
+                }
+    
+                return (this.data = result);
+            }
+            return [];
+        }
+    }
+    
+    const array1 = new Myarray();
+    array1.push(5);
+    array1.push(23);
+    array1.push(3);
+    console.log(array1.map((element) => element * 2));
+    console.log(array1.filter((element) => element > 10));
   </code>
   </pre>
-</div> -->
-
+</div>
+<!-- array code ends here -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
 </body>
