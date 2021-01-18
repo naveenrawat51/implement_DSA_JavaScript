@@ -1,7 +1,5 @@
 import './styles/main.scss';
-import { arrayComplexity } from './DS_types/array';
-import { stackComplexity } from './DS_types/stack';
-import { linkedListComplexity } from './DS_types/linkedList';
+import * as complexityData from './DS_types/allComplexityData';
 
 const getAllBtn = Array.prototype.slice.call(
     document.querySelectorAll('button')
@@ -48,23 +46,24 @@ window.addEventListener('click', (event) => {
 
             switch (event.target.value) {
                 case 'ARRAY':
-                    showComplexity(arrayComplexity);
+                    showComplexity(complexityData.arrayComplexity);
                     return;
                 case 'STACK':
-                    showComplexity(stackComplexity);
+                    showComplexity(complexityData.stackComplexity);
                     return;
                 case 'LINKEDLIST':
-                    showComplexity(linkedListComplexity);
+                    showComplexity(complexityData.linkedListComplexity);
+                    return;
+                case 'DOUBLY LINKEDLIST':
+                    showComplexity(complexityData.doublyLinkedListComplexity);
                     return;
             }
         });
 
         codeSnippetContainers.forEach((ele) => {
-            if (ele.getAttribute('data-type') === event.target.value) {
-                ele.classList.remove('hide');
-            } else {
-                ele.classList.add('hide');
-            }
+            ele.getAttribute('data-type') === event.target.value
+                ? ele.classList.remove('hide')
+                : ele.classList.add('hide');
         });
     }
 });

@@ -1,19 +1,3 @@
-export const stackComplexity = {
-    type: 'Stack',
-    url: 'https://en.wikipedia.org/wiki/Stack_(abstract_data_type)',
-    complexityData: [
-        { color: 'yellow', complexity: 'Θ(n)' },
-        { color: 'yellow', complexity: 'Θ(n)' },
-        { color: 'green', complexity: 'Θ(1)' },
-        { color: 'green', complexity: 'O(1)' },
-        { color: 'yellow', complexity: 'Θ(n)' },
-        { color: 'yellow', complexity: 'O(n)' },
-        { color: 'green', complexity: 'O(1)' },
-        { color: 'green', complexity: 'O(1)' },
-        { color: 'yellow', complexity: 'O(n)' },
-    ],
-};
-
 class Mystack {
     constructor() {
         this.count = 0;
