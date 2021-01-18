@@ -3,15 +3,17 @@ class Node {
     constructor(value) {
         this.value = value;
         this.next = null;
+        this.previous = null;
     }
 }
 
 // linkedlist implementation
-class LinkedList {
+class DoublyLinkedList {
     constructor(value) {
         this.head = {
             value: value,
             next: null,
+            previous: null,
         };
         this.tail = this.head;
         this.length = 1;
@@ -20,6 +22,7 @@ class LinkedList {
     append(value) {
         const newNode = new Node(value);
         this.tail.next = newNode;
+        newNode.previous = this.tail;
         this.tail = newNode;
         this.length += 1;
 
@@ -29,6 +32,7 @@ class LinkedList {
     prepend(value) {
         const newNode = new Node(value);
         newNode.next = this.head;
+        this.head.previous = newNode;
         this.head = newNode;
         this.length += 1;
 
@@ -51,7 +55,9 @@ class LinkedList {
         }
 
         previousNode.next = newNode;
+        newNode.previous = previousNode;
         newNode.next = currentNode;
+        currentNode.previous = newNode;
         this.length += 1;
 
         return this;
@@ -72,6 +78,7 @@ class LinkedList {
         }
 
         previousNode.next = currentNode.next;
+        currentNode.next.previous = previousNode;
         this.length -= 1;
 
         return this;
@@ -79,6 +86,7 @@ class LinkedList {
 
     // remove the head O(1)
     removeHead() {
+        this.head.next.previous = null;
         this.head = this.head.next;
         this.length -= 1;
         return this;
@@ -116,7 +124,7 @@ class LinkedList {
     }
 }
 
-const ll = new LinkedList(100);
+const ll = new DoublyLinkedList(100);
 console.log(ll.append(500));
 ll.prepend(555);
 ll.prepend(666);
