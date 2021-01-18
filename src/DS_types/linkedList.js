@@ -114,16 +114,58 @@ class LinkedList {
 
         return index;
     }
+
+    // Reverse linkedlist
+    reverse() {
+        if (!this.head.next) {
+            return this.head;
+        }
+
+        let first = this.head;
+        let second = first.next;
+
+        while (second) {
+            const temp = second.next;
+            second.next = first;
+            first = second;
+            second = temp;
+
+            console.log(first, second, temp);
+        }
+
+        this.head.next = null;
+        this.head = first;
+
+        return this;
+    }
+
+    // print linkedList
+    printLinkedList() {
+        const result = [];
+        let currentNode = this.head;
+
+        while (currentNode) {
+            result.push(currentNode.value);
+            currentNode = currentNode.next;
+        }
+
+        return result;
+    }
 }
 
 const ll = new LinkedList(100);
 console.log(ll.append(500));
 ll.prepend(555);
-ll.prepend(666);
+ll.prepend(222);
+ll.prepend(777);
+ll.prepend(333);
 console.log(ll.prepend(444));
 console.log(ll.appenAt(2, 999));
 console.log(ll.appenAt(4, 888));
-console.log(ll.removeAt(4));
-console.log(ll.removeHead());
-ll.removeTail();
+//console.log(ll.removeAt(4));
+//console.log(ll.removeHead());
+//console.log(ll.removeTail());
 console.log(ll.search(555));
+console.log(ll.printLinkedList());
+console.log(ll.reverse());
+console.log(ll.printLinkedList());
