@@ -61,3 +61,19 @@ export const doublyLinkedListComplexity = {
         { color: 'yellow', complexity: 'O(n)' },
     ],
 };
+
+export const hashTableComplexity = {
+    type: 'Hash Table',
+    url: 'http://en.wikipedia.org/wiki/Hash_table',
+    complexityData: [
+        { color: 'gray', complexity: 'N/A' },
+        { color: 'green', complexity: 'Θ(1)' },
+        { color: 'green', complexity: 'Θ(1)' },
+        { color: 'green', complexity: 'O(1)' },
+        { color: 'gray', complexity: 'N/A' },
+        { color: 'yellow', complexity: 'O(n)' },
+        { color: 'yellow', complexity: 'O(n)' },
+        { color: 'yellow', complexity: 'O(n)' },
+        { color: 'yellow', complexity: 'O(n)' },
+    ],
+};

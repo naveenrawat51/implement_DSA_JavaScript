@@ -57,6 +57,9 @@ window.addEventListener('click', (event) => {
                 case 'DOUBLY LINKEDLIST':
                     showComplexity(complexityData.doublyLinkedListComplexity);
                     return;
+                case 'HASH TABLE':
+                    showComplexity(complexityData.hashTableComplexity);
+                    return;
             }
         });
 
