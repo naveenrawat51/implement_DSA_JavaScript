@@ -46,19 +46,22 @@ window.addEventListener('click', (event) => {
 
             switch (event.target.value) {
                 case 'ARRAY':
-                    showComplexity(complexityData.arrayComplexity);
+                    showComplexity(complexityData.array);
                     return;
                 case 'STACK':
-                    showComplexity(complexityData.stackComplexity);
+                    showComplexity(complexityData.stack);
                     return;
                 case 'LINKEDLIST':
-                    showComplexity(complexityData.linkedListComplexity);
+                    showComplexity(complexityData.linkedList);
                     return;
                 case 'DOUBLY LINKEDLIST':
-                    showComplexity(complexityData.doublyLinkedListComplexity);
+                    showComplexity(complexityData.doublyLinkedList);
                     return;
                 case 'HASH TABLE':
-                    showComplexity(complexityData.hashTableComplexity);
+                    showComplexity(complexityData.hashTable);
+                    return;
+                case 'BINARY SEARCH TREE':
+                    showComplexity(complexityData.binarySearchTree);
                     return;
             }
         });
