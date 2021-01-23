@@ -1,0 +1,640 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"/> <title>Document</title> </head> <body> <div id="mainHeading"><h1 style="text-align:center">Data Structures and Algorithms</h1></div> <div id="homeButtonContainer" class="go-to-home" style="display:flex;flex-direction:column;width:300px;justify-content:space-between;position:absolute"> <button class="button go-home hide" style="background-color:#00f" value="Go To HOME">Go To HOME</button> </div> <div id="buttonContainer" style="display:flex;flex-direction:column;max-width:400px;margin:auto;justify-content:space-between"> <button class="button ds-btn" value="ARRAY">ARRAY</button> <button class="button ds-btn" value="STACK">STACK</button> <button class="button ds-btn" value="LINKEDLIST">LINKEDLIST</button> <button class="button ds-btn" value="DOUBLY LINKEDLIST">DOUBLY LINKEDLIST</button> <button class="button ds-btn" value="HASH TABLE">HASH TABLE</button> <button class="button ds-btn" value="BINARY SEARCH TREE">BINARY SEARCH TREE</button> </div> <div id="complexityContainer" style="text-align:center" class="hide"> <table class="table table-bordered table-striped"> <tbody><tr> <th>Data Structure</th> <th colspan="8">Time Complexity</th> <th>Space Complexity</th> </tr> <tr> <th></th> <th colspan="4">Average</th> <th colspan="4">Worst</th> <th>Worst</th> </tr> <tr> <th></th> <th>Access</th> <th>Search</th> <th>Insertion</th> <th>Deletion</th> <th>Access</th> <th>Search</th> <th>Insertion</th> <th>Deletion</th> <th></th> </tr> <tr id="complexityData"> </tr> </tbody></table> </div> <div data-type="ARRAY" class="hide codeSnippet"> <pre><code class="language-javascript">
+      class Myarray {
+        constructor(size) {
+            (this.data = {}), (this.length = 0);
+    
+            for (let i = 0; i &lt; size; i++) {
+                this.data[i] = undefined;
+                this.length++;
+            }
+        }
+    
+        push(item) {
+            this.data[this.length] = item;
+            this.length += 1;
+            return this.data;
+        }
+    
+        pop() {
+            if (this.length) {
+                delete this.data[this.length - 1];
+                this.length -= 1;
+                console.log(this.data, this.length);
+                return this.data;
+            }
+            return null;
+        }
+    
+        map(callback) {
+            if (typeof callback === 'Function' || typeof callback === 'function') {
+                const result = {};
+                for (let i = 0; i &lt; this.length; i++) {
+                    result[i] = callback(this.data[i], i, this.data);
+                }
+                return (this.data = result);
+            }
+            return null;
+        }
+    
+        filter(callback) {
+            if (typeof callback === 'Function' || typeof callback === 'function') {
+                const result = {};
+                let counter = 0;
+                for (let i = 0; i &lt; this.length; i++) {
+                    if (callback(this.data[i], i, this.data)) {
+                        result[counter] = this.data[i];
+                        counter++;
+                    }
+                }
+    
+                return (this.data = result);
+            }
+            return [];
+        }
+    }
+    
+    const array1 = new Myarray();
+    array1.push(5);
+    array1.push(23);
+    array1.push(3);
+    console.log(array1.map((element) => element * 2));
+    console.log(array1.filter((element) => element > 10));
+  </code>
+  </pre> </div> <div data-type="STACK" class="hide codeSnippet"> <pre><code class="language-javascript">
+        class Mystack {
+            constructor(){
+                this.count = 0;
+                this.data = [];
+            }
+        
+            push(item) {
+                this.data[this.count] = item;
+                this.count += 1;
+                return this.data;
+            }
+        
+            pop() {
+                if (this.count) {
+                    const deletedItem = this.data[this.count -1];
+                    this.data.splice(this.count-1, 1);
+                    this.count -= 1;
+                    return deletedItem;
+                }
+                return undefined;
+            }
+        
+            peek() {
+                return this.data[this.count - 1];
+            }
+        
+            printStack() {
+                return this.data;
+            }
+        
+            isEmpty() {
+                return this.count === 0;
+            }
+        }
+        
+        const stack1 = new Mystack();
+        console.log(stack1.push(200));
+        console.log(stack1.push(100));
+        console.log(stack1.push(500));
+        console.log(stack1.pop());
+        console.log(stack1.printStack());
+        console.log(stack1.peek());
+        console.log(stack1.pop());
+        console.log(stack1.pop());
+        console.log(stack1.peek());
+        console.log(stack1.isEmpty());
+        
+  </code>
+  </pre> </div> <div data-type="LINKEDLIST" class="hide codeSnippet"> <pre><code class="language-javascript">
+// new node structure
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
+// linkedlist implementation
+class LinkedList {
+    constructor(value) {
+        this.head = {
+            value: value,
+            next: null
+        };
+        this.tail = this.head;
+        this.length = 1;
+    }
+
+    // append at the end O(1)
+    append(value) {
+        const newNode = new Node(value);
+        this.tail.next = newNode;
+        this.tail = newNode;
+        this.length += 1;
+
+        return this;
+    }
+
+    // append at the start O(1)
+    prepend(value) {
+        const newNode = new Node(value);
+        newNode.next = this.head;
+        this.head = newNode;
+        this.length += 1;
+
+        return this;
+    }
+
+    // append at given index O(n)
+    appenAt(index, value) {
+
+        if (index &lt; 0 || index > this.length) {
+            return;
+        }
+        const newNode = new Node(value);
+        let count = 0;
+        let currentNode = this.head;
+        let previousNode;
+
+        while(count !== index) {
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+            count++;
+        }
+
+        previousNode.next = newNode;
+        newNode.next = currentNode;
+        this.length += 1;
+
+        return this;
+    }
+
+    // remove at given index O(n)
+    removeAt(index) {
+        if (index &lt; 0 || index > this.length) {
+            return;
+        }
+        let count = 0;
+        let currentNode = this.head;
+        let previousNode;
+
+        while(count !== index) {
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+            count++;
+        }
+
+        previousNode.next = currentNode.next;
+        this.length -= 1;
+
+        return this;
+    }
+
+    // remove the head O(1)
+    removeHead() {
+        this.head = this.head.next;
+        this.length -= 1;
+        return this;
+    }
+
+    // remove the tail O(n)
+    removeTail() {
+        let current = this.head;
+        let previous;
+
+        while(current.next) {
+            previous = current;
+            current = current.next;
+        }
+
+        previous.next = null;
+        this.tail = previous;
+        this.length -= 1;
+
+        return this;
+
+    }
+
+    // search given value O(n)
+    search(value) {
+        let current = this.head;
+        let index = 0;
+
+        while (current.value !== value) {
+            current = current.next;
+            index += 1;
+            if (current == null) {
+                return 'item not found';
+            }
+        }
+
+        return index;
+    }
+
+    // Reverse linkedlist
+    reverse() {
+        if (!this.head.next) {
+            return this.head;
+        }
+
+        let first = this.head;
+        let second = first.next;
+
+        while (second) {
+            const temp = second.next;
+            second.next = first;
+            first = second;
+            second = temp;
+        }
+
+        this.head.next = null;
+        this.head = first;
+
+        return this;
+    }
+
+    // print linkedList
+    printLinkedList() {
+        const result = [];
+        let currentNode = this.head;
+
+        while (currentNode) {
+            result.push(currentNode.value);
+            currentNode = currentNode.next;
+        }
+
+        return result;
+    }
+};
+
+const ll = new LinkedList(100);
+console.log(ll.append(500));
+ll.prepend(555);
+ll.prepend(666);
+console.log(ll.prepend(444));
+console.log(ll.appenAt(2, 999));
+console.log(ll.appenAt(4, 888));
+console.log(ll.removeAt(4));
+console.log(ll.removeHead());
+ll.removeTail();
+console.log(ll.search(555))
+console.log(ll.printLinkedList());
+console.log(ll.reverse());
+console.log(ll.printLinkedList());
+  </code>
+  </pre> </div> <div data-type="DOUBLY LINKEDLIST" class="hide codeSnippet"> <pre><code class="language-javascript">
+        // new node structure
+        class Node {
+            constructor(value) {
+                this.value = value;
+                this.next = null;
+                this.previous = null;
+            }
+        }
+        
+        // linkedlist implementation
+        class DoublyLinkedList {
+            constructor(value) {
+                this.head = {
+                    value: value,
+                    next: null,
+                    previous: null,
+                };
+                this.tail = this.head;
+                this.length = 1;
+            }
+
+            // append at the end O(1)
+            append(value) {
+                const newNode = new Node(value);
+                this.tail.next = newNode;
+                newNode.previous = this.tail;
+                this.tail = newNode;
+                this.length += 1;
+        
+                return this;
+            }
+
+            // append at the start O(1)
+            prepend(value) {
+                const newNode = new Node(value);
+                newNode.next = this.head;
+                this.head.previous = newNode;
+                this.head = newNode;
+                this.length += 1;
+        
+                return this;
+            }
+
+            // append at given index O(n)
+            appenAt(index, value) {
+                if (index &lt; 0 || index > this.length) {
+                    return;
+                }
+                const newNode = new Node(value);
+                let count = 0;
+                let currentNode = this.head;
+                let previousNode;
+        
+                while (count !== index) {
+                    previousNode = currentNode;
+                    currentNode = currentNode.next;
+                    count++;
+                }
+        
+                previousNode.next = newNode;
+                newNode.previous = previousNode;
+                newNode.next = currentNode;
+                currentNode.previous = newNode;
+                this.length += 1;
+        
+                return this;
+            }
+
+            // remove at given index O(n)
+            removeAt(index) {
+                if (index &lt; 0 || index > this.length) {
+                    return;
+                }
+                let count = 0;
+                let currentNode = this.head;
+                let previousNode;
+        
+                while (count !== index) {
+                    previousNode = currentNode;
+                    currentNode = currentNode.next;
+                    count++;
+                }
+        
+                previousNode.next = currentNode.next;
+                currentNode.next.previous = previousNode;
+                this.length -= 1;
+        
+                return this;
+            }
+        
+            // remove the head O(1)
+            removeHead() {
+                this.head.next.previous = null;
+                this.head = this.head.next;
+                this.length -= 1;
+                return this;
+            }
+
+            // remove the tail O(n)
+            removeTail() {
+                let current = this.head;
+                let previous;
+        
+                while (current.next) {
+                    previous = current;
+                    current = current.next;
+                }
+        
+                previous.next = null;
+                this.tail = previous;
+                this.length -= 1;
+        
+                return this;
+            }
+
+            // search given value O(n)
+            search(value) {
+                let current = this.head;
+                let index = 0;
+        
+                while (current.value !== value) {
+                    current = current.next;
+                    index += 1;
+                    if (current == null) {
+                        return 'item not found';
+                    }
+                }
+        
+                return index;
+            }
+        }
+        
+        const ll = new DoublyLinkedList(100);
+        console.log(ll.append(500));
+        ll.prepend(555);
+        ll.prepend(666);
+        console.log(ll.prepend(444));
+        console.log(ll.appenAt(2, 999));
+        console.log(ll.appenAt(4, 888));
+        console.log(ll.removeAt(4));
+        console.log(ll.removeHead());
+        ll.removeTail();
+        console.log(ll.search(555));
+  </code>
+  </pre> </div> <div data-type="HASH TABLE" class="hide codeSnippet"> <pre><code class="language-javascript">
+        class HashTable {
+            constructor(size) {
+                this.data = new Array(size);
+            }
+        
+            // hash method
+            hashKey(key) {
+                let hash = 0;
+                for (let i = 0; i &lt; key.length; i++) {
+                    hash = (hash + key.charCodeAt(i) * i) % this.data.length;
+                }
+        
+                return hash;
+            }
+        
+            // set a key value in hash table
+            set(key, value) {
+                const address = this.hashKey(key);
+                if (!this.data[address]) {
+                    this.data[address] = [];
+                }
+                this.data[address].push([key, value]);
+        
+                return this.data;
+            }
+        
+            // get the item from hash table
+            get(key) {
+                const address = this.hashKey(key);
+                const getArray = this.data[address];
+        
+                if (getArray && getArray.length > 1) {
+                    for (let item of getArray) {
+                        if (item[0] === key) {
+                            return item;
+                        }
+                    }
+                }
+        
+                return (getArray && getArray[0]) || 'Record not found';
+            }
+        }
+        
+        const hash1 = new HashTable(6);
+        console.log(hash1.set('naveen', 32));
+        console.log(hash1.set('sangeeta', 24));
+        console.log(hash1.set('kamal', 24));
+        console.log(hash1.set('arya', 24));
+        console.log(hash1.set('sanju', 24));
+        console.log(hash1.get('naveen'));
+        console.log(hash1.get('sangeeta'));
+        console.log(hash1.get('sanju'));
+        
+  </code>
+  </pre> </div> <div data-type="BINARY SEARCH TREE" class="hide codeSnippet"> <pre><code class="language-javascript">
+        class Node {
+            constructor(value) {
+                this.value = value;
+                this.right = null;
+                this.left = null;
+            }
+        }
+        
+        class BinarySearchTree {
+            constructor() {
+                this.root = null;
+            }
+        
+            // insert element into BST
+            insert(value) {
+                const newNode = new Node(value);
+        
+                if (!this.root) {
+                    this.root = newNode;
+                } else {
+                    let currentNode = this.root;
+                    while (true) {
+                        if (value &lt; currentNode.value) {
+                            if (!currentNode.left) {
+                                currentNode.left = newNode;
+                                return this;
+                            }
+                            currentNode = currentNode.left;
+                        }
+        
+                        if (value > currentNode.value) {
+                            if (!currentNode.right) {
+                                currentNode.right = newNode;
+                                return this;
+                            }
+                            currentNode = currentNode.right;
+                        }
+                    }
+                }
+        
+                return this;
+            }
+        
+            // look up for node
+            lookup(value) {
+                if (!this.root) {
+                    return false;
+                }
+        
+                let currentNode = this.root;
+                while (currentNode) {
+                    if (value > currentNode.value) {
+                        currentNode = currentNode.right;
+                    } else if (value &lt; currentNode.value) {
+                        currentNode = currentNode.left;
+                    } else if (value === currentNode.value) {
+                        return currentNode;
+                    }
+                }
+        
+                return false;
+            }
+        
+            // remove node
+            remove(value) {
+                if (!this.root) {
+                    return false;
+                }
+        
+                let currentNode = this.root;
+                let parentNode = null;
+        
+                while (currentNode) {
+                    if (value &lt; currentNode.value) {
+                        parentNode = currentNode;
+                        currentNode = currentNode.left;
+                    } else if (value > currentNode.value) {
+                        parentNode = currentNode;
+                        currentNode = currentNode.right;
+                    } else if (value === currentNode.value) {
+                        if (!currentNode.right) {
+                            if (!parentNode) {
+                                this.root = currentNode.left;
+                            } else {
+                                if (currentNode.value &lt; parentNode.value) {
+                                    parentNode.left = currentNode.left;
+                                } else if (currentNode.value > parentNode.value) {
+                                    parentNode.right = currentNode.left;
+                                }
+                            }
+                        } else if (!currentNode.right.left) {
+                            if (!parentNode) {
+                                this.root = currentNode.left;
+                            } else {
+                                currentNode.right.left = currentNode.left;
+                                if (currentNode.value &lt; parentNode.value) {
+                                    parentNode.left = currentNode.right;
+                                } else if (currentNode.value > parentNode.value) {
+                                    parentNode.right = currentNode.right;
+                                }
+                            }
+                        } else {
+                            let leftMost = currentNode.right.left;
+                            let leftMostParent = currentNode.right;
+                            while (leftMost.left !== null) {
+                                leftMostParent = leftMost;
+                                leftMost = leftMost.left;
+                            }
+        
+                            leftMostParent.left = leftMost.right;
+                            leftMost.left = currentNode.left;
+                            leftMost.right = currentNode.right;
+        
+                            if (!parentNode) {
+                                this.root = leftMost;
+                            } else {
+                                if (currentNode.value &lt; parentNode.value) {
+                                    parentNode.left = leftMost;
+                                } else if (currentNode.value > parentNode.value) {
+                                    parentNode.right = leftMost;
+                                }
+                            }
+                        }
+        
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+        
+        const bst1 = new BinarySearchTree();
+        bst1.insert(9);
+        bst1.insert(4);
+        bst1.insert(6);
+        bst1.insert(20);
+        bst1.insert(170);
+        bst1.insert(15);
+        bst1.insert(1);
+        bst1.insert(13);
+        bst1.insert(17);
+        bst1.insert(89);
+        bst1.insert(90);
+        bst1.insert(220);
+        bst1.insert(190);
+        console.log(bst1.insert(8));
+        console.log(bst1.remove(9));
+        //console.log(bst1.lookup(9));
+        
+  </code>
+  </pre> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script> <script src="main.js"></script></body> </html>
