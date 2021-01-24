@@ -16,14 +16,14 @@
     </div>
     <div id="buttonContainer" style="display: flex; flex-direction: column; max-width: 400px; margin: auto; justify-content: space-between;">
     <button class="button ds-btn" value="ARRAY">ARRAY</button>
+    <button class="button ds-btn" value="HASH TABLE">HASH TABLE</button>
     <button class="button ds-btn" value="STACK">STACK</button>
+    <button class="button ds-btn" value="QUEUE">QUEUE</button>
     <button class="button ds-btn" value="LINKEDLIST">LINKEDLIST</button>
     <button class="button ds-btn" value="DOUBLY LINKEDLIST">DOUBLY LINKEDLIST</button>
-    <button class="button ds-btn" value="HASH TABLE">HASH TABLE</button>
     <button class="button ds-btn" value="BINARY SEARCH TREE">BINARY SEARCH TREE</button>
     <button class="button ds-btn" value="AVL BINARY SEARCH TREE">AVL BINARY SEARCH TREE</button>
-    <!-- <button class="button ds-btn" value="QUEUE">QUEUE</button>
-    <button class="button ds-btn" value="GRAPH">GRAPH</button> -->
+    <!-- <button class="button ds-btn" value="GRAPH">GRAPH</button> -->
 </div>
 
 <div id="complexityContainer" style="text-align: center;" class="hide">
@@ -734,10 +734,10 @@ console.log(ll.printLinkedList());
   </code>
   </pre>
 </div>
-<!-- Binary Search Table implementation ends here -->
+<!-- Binary Search Tree implementation ends here -->
 
 
-<!-- Binary Search Tree implementation starts here -->
+<!-- AVL Binary Search Tree implementation starts here -->
 <div data-type="AVL BINARY SEARCH TREE" class="hide codeSnippet">
     <pre><code class="language-javascript" > 
         class Node {
@@ -970,9 +970,72 @@ console.log(ll.printLinkedList());
   </code>
   </pre>
 </div>
-<!-- AVL Binary Search Table implementation ends here -->
+<!-- AVL Binary Search Tree implementation ends here -->
 
 
+<!-- Queue implementation starts here -->
+<div data-type="QUEUE" class="hide codeSnippet">
+    <pre><code class="language-javascript" >
+        class Node {
+            constructor(value) {
+                this.value = value;
+                this.next = null;
+            }
+        }
+        
+        class Queue {
+            constructor() {
+                this.first = null;
+                this.last = null;
+                this.length = 0;
+            }
+        
+            peek() {
+                return this.first;
+            }
+        
+            enqueue(value) {
+                const newNode = new Node(value);
+                if (this.length === 0) {
+                    this.first = newNode;
+                    this.last = newNode;
+                } else {
+                    this.last.next = newNode;
+                    this.last = newNode;
+                }
+                this.length += 1;
+        
+                return this;
+            }
+        
+            dequeue() {
+                if (!this.first) {
+                    return null;
+                }
+                if (this.first === this.last) {
+                    this.last = null;
+                    return null;
+                }
+                this.first = this.first.next;
+                this.length -= 1;
+        
+                return this;
+            }
+        }
+        
+        const queue = new Queue();
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+        queue.enqueue(4);
+        console.log(queue.enqueue(5));
+        console.log(queue.dequeue());
+        console.log(queue.dequeue());
+        console.log(queue.peek()); 
+  </code>
+  </pre>
+</div>
+<!-- Queue implementation ends here -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
 </body>
