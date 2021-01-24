@@ -66,6 +66,9 @@ window.addEventListener('click', (event) => {
                 case 'AVL BINARY SEARCH TREE':
                     showComplexity(complexityData.AvlBinarySearchTree);
                     return;
+                case 'QUEUE':
+                    showComplexity(complexityData.queue);
+                    return;
             }
         });
 

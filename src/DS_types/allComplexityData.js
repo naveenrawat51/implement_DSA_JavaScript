@@ -109,3 +109,19 @@ export const AvlBinarySearchTree = {
         { color: 'yellow', complexity: 'Θ(n)' },
     ],
 };
+
+export const queue = {
+    type: 'Queue',
+    url: 'https://en.wikipedia.org/wiki/Queue_(abstract_data_type)',
+    complexityData: [
+        { color: 'yellow', complexity: 'Θ(n)' },
+        { color: 'yellow', complexity: 'Θ(n)' },
+        { color: 'green', complexity: 'Θ(1)' },
+        { color: 'green', complexity: 'Θ(1)' },
+        { color: 'yellow', complexity: 'Θ(n)' },
+        { color: 'yellow', complexity: 'Θ(n)' },
+        { color: 'green', complexity: 'Θ(1)' },
+        { color: 'green', complexity: 'Θ(1)' },
+        { color: 'yellow', complexity: 'Θ(n)' },
+    ],
+};
