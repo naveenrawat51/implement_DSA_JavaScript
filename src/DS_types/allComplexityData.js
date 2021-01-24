@@ -93,3 +93,19 @@ export const binarySearchTree = {
         { color: 'yellow', complexity: 'Θ(n)' },
     ],
 };
+
+export const AvlBinarySearchTree = {
+    type: 'AVL Tree',
+    url: 'http://en.wikipedia.org/wiki/AVL_tree',
+    complexityData: [
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'yellow', complexity: 'Θ(n)' },
+    ],
+};
