@@ -125,3 +125,19 @@ export const queue = {
         { color: 'yellow', complexity: 'Θ(n)' },
     ],
 };
+
+export const heap = {
+    type: 'Heap',
+    url: 'https://en.wikipedia.org/wiki/Binary_heap',
+    complexityData: [
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'green', complexity: 'Θ(1)' },
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'green', complexity: 'Θ(1)' },
+        { color: 'yellow', complexity: 'Θ(n)' },
+    ],
+};
