@@ -69,6 +69,9 @@ window.addEventListener('click', (event) => {
                 case 'QUEUE':
                     showComplexity(complexityData.queue);
                     return;
+                case 'MIN HEAP':
+                    showComplexity(complexityData.heap);
+                    return;
             }
         });
 
