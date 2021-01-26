@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"/> <title>Document</title> </head> <body> <div id="mainHeading"><h1 style="text-align:center">Data Structures and Algorithms</h1></div> <div id="homeButtonContainer" class="go-to-home" style="display:flex;flex-direction:column;width:300px;justify-content:space-between;position:absolute"> <button class="button go-home hide" style="background-color:#00f" value="Go To HOME">Go To HOME</button> </div> <div id="buttonContainer" style="display:flex;flex-direction:column;max-width:400px;margin:auto;justify-content:space-between"> <button class="button ds-btn" value="ARRAY">ARRAY</button> <button class="button ds-btn" value="HASH TABLE">HASH TABLE</button> <button class="button ds-btn" value="STACK">STACK</button> <button class="button ds-btn" value="QUEUE">QUEUE</button> <button class="button ds-btn" value="LINKEDLIST">LINKEDLIST</button> <button class="button ds-btn" value="DOUBLY LINKEDLIST">DOUBLY LINKEDLIST</button> <button class="button ds-btn" value="BINARY SEARCH TREE">BINARY SEARCH TREE</button> <button class="button ds-btn" value="AVL BINARY SEARCH TREE">AVL BINARY SEARCH TREE</button> </div> <div id="complexityContainer" style="text-align:center" class="hide"> <table class="table table-bordered table-striped"> <tbody><tr> <th>Data Structure</th> <th colspan="8">Time Complexity</th> <th>Space Complexity</th> </tr> <tr> <th></th> <th colspan="4">Average</th> <th colspan="4">Worst</th> <th>Worst</th> </tr> <tr> <th></th> <th>Access</th> <th>Search</th> <th>Insertion</th> <th>Deletion</th> <th>Access</th> <th>Search</th> <th>Insertion</th> <th>Deletion</th> <th></th> </tr> <tr id="complexityData"> </tr> </tbody></table> </div> <div data-type="ARRAY" class="hide codeSnippet"> <pre><code class="language-javascript">
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"/> <title>Document</title> </head> <body> <div id="mainHeading"><h1 style="text-align:center">Data Structures and Algorithms</h1></div> <div id="homeButtonContainer" class="go-to-home" style="display:flex;flex-direction:column;width:300px;justify-content:space-between;position:absolute"> <button class="button go-home hide" style="background-color:#00f" value="Go To HOME">Go To HOME</button> </div> <div id="buttonContainer" style="display:flex;flex-direction:column;max-width:400px;margin:auto;justify-content:space-between"> <button class="button ds-btn" value="ARRAY">ARRAY</button> <button class="button ds-btn" value="HASH TABLE">HASH TABLE</button> <button class="button ds-btn" value="STACK">STACK</button> <button class="button ds-btn" value="QUEUE">QUEUE</button> <button class="button ds-btn" value="LINKEDLIST">LINKEDLIST</button> <button class="button ds-btn" value="DOUBLY LINKEDLIST">DOUBLY LINKEDLIST</button> <button class="button ds-btn" value="BINARY SEARCH TREE">BINARY SEARCH TREE</button> <button class="button ds-btn" value="AVL BINARY SEARCH TREE">AVL BINARY SEARCH TREE</button> <button class="button ds-btn" value="MIN HEAP">HEAPS</button> <button class="button ds-btn" value="GRAPHS">GRAPHS</button> </div> <div id="complexityContainer" style="text-align:center" class="hide"> <table class="table table-bordered table-striped"> <tbody><tr> <th>Data Structure</th> <th colspan="8">Time Complexity</th> <th>Space Complexity</th> </tr> <tr> <th></th> <th colspan="4">Average</th> <th colspan="4">Worst</th> <th>Worst</th> </tr> <tr> <th></th> <th>Access</th> <th>Search</th> <th>Insertion</th> <th>Deletion</th> <th>Access</th> <th>Search</th> <th>Insertion</th> <th>Deletion</th> <th></th> </tr> <tr id="complexityData"> </tr> </tbody></table> </div> <div data-type="ARRAY" class="hide codeSnippet"> <pre><code class="language-javascript">
       class Myarray {
         constructor(size) {
             (this.data = {}), (this.length = 0);
@@ -923,5 +923,166 @@ console.log(ll.printLinkedList());
         console.log(queue.dequeue());
         console.log(queue.dequeue());
         console.log(queue.peek()); 
+  </code>
+  </pre> </div> <div data-type="MIN HEAP" class="hide codeSnippet"> <pre><code class="language-javascript">
+        class MinHeap {
+            constructor() {
+                this.heap = [null];
+            }
+        
+            // get min item
+            getMin() {
+                return this.heap[1];
+            }
+        
+            // insert item
+            insert(node) {
+                this.heap.push(node);
+        
+                if (this.heap.length > 1) {
+                    let current = this.heap.length - 1;
+        
+                    while (
+                        current > 1 &&
+                        this.heap[Math.floor(current / 2)] > this.heap[current]
+                    ) {
+                        [this.heap[Math.floor(current / 2)], this.heap[current]] = [
+                            this.heap[current],
+                            this.heap[Math.floor(current / 2)],
+                        ];
+                        current = Math.floor(current / 2);
+                    }
+                }
+        
+                return this.heap;
+            }
+        
+            remove() {
+                let smallest = this.heap[1];
+        
+                if (this.heap.length > 2) {
+                    this.heap[1] = this.heap[this.heap.length - 1];
+                    this.heap.splice(this.heap.length - 1);
+        
+                    if (this.heap.length === 3) {
+                        if (this.heap[1] > this.heap[2]) {
+                            [this.heap[1], this.heap[2]] = [this.heap[2], this.heap[1]];
+                        }
+                        return smallest;
+                    }
+        
+                    let current = 1;
+                    let leftChildIndex = current * 2;
+                    let rightChildIndex = current * 2 + 1;
+        
+                    while (
+                        this.heap[leftChildIndex] &&
+                        this.heap[rightChildIndex] &&
+                        (this.heap[current] > this.heap[leftChildIndex] ||
+                            this.heap[current] > this.heap[rightChildIndex])
+                    ) {
+                        if (this.heap[leftChildIndex] &lt; this.heap[rightChildIndex]) {
+                            [this.heap[current], this.heap[leftChildIndex]] = [
+                                this.heap[leftChildIndex],
+                                this.heap[current],
+                            ];
+                            current = leftChildIndex;
+                        } else {
+                            [this.heap[current], this.heap[rightChildIndex]] = [
+                                this.heap[rightChildIndex],
+                                this.heap[current],
+                            ];
+                            current = rightChildIndex;
+                        }
+        
+                        leftChildIndex = current * 2;
+                        rightChildIndex = current * 2 + 1;
+                    }
+        
+                    if (
+                        this.heap[rightChildIndex] === undefined &&
+                        this.heap[leftChildIndex] &lt; this.heap[current]
+                    ) {
+                        [this.heap[current], this.heap[leftChildIndex]] = [
+                            this.heap[leftChildIndex],
+                            this.heap[current],
+                        ];
+                    }
+                } else if (this.heap.length === 2) {
+                    /* If there are only two elements in the array, we directly splice out the first element */
+                    this.heap.splice(1, 1);
+                } else {
+                    return null;
+                }
+        
+                return smallest;
+            }
+        }
+        
+        const minHeap = new MinHeap();
+        console.log(minHeap.insert(32));
+        console.log(minHeap.insert(38));
+        console.log(minHeap.insert(45));
+        console.log(minHeap.insert(57));
+        console.log(minHeap.insert(10));
+        console.log(minHeap.insert(23));
+        console.log(minHeap.insert(36));
+        console.log(minHeap.insert(6));
+        minHeap.remove();
+        console.log(minHeap.getMin());
+        console.log(minHeap.heap);
+        
+  </code>
+  </pre> </div> <div data-type="GRAPHS" class="hide codeSnippet"> <pre><code class="language-javascript">
+        class Graph {
+            constructor() {
+                this.numberOfNodes = 0;
+                this.adjacentList = {}
+            };
+        
+            addVertex(node){
+                this.adjacentList[node] = [];
+                this.numberOfNodes += 1;
+            }
+        
+            addEdge(node1, node2) {
+                 this.adjacentList[node1].push(node2);
+                 this.adjacentList[node2].push(node1);
+            }
+        
+            showConnections() {
+                const allNodes = Object.keys(this.adjacentList);
+                for (let node of allNodes) { 
+                    let nodeConnections = this.adjacentList[node]; 
+                    let connections = ""; 
+                    let vertex;
+                    for (vertex of nodeConnections) {
+                      connections += vertex + " ";
+                    } 
+                    console.log(node + "-->" + connections); 
+                  }
+            }
+        }
+        
+        const myGraph = new Graph();
+        myGraph.addVertex('0');
+        myGraph.addVertex('1');
+        myGraph.addVertex('2');
+        myGraph.addVertex('3');
+        myGraph.addVertex('4');
+        myGraph.addVertex('5');
+        myGraph.addVertex('6');
+        
+        myGraph.addEdge('3', '1');
+        myGraph.addEdge('3', '4');
+        myGraph.addEdge('4', '2');
+        myGraph.addEdge('4', '5');
+        myGraph.addEdge('1', '2');
+        myGraph.addEdge('1', '0');
+        myGraph.addEdge('0', '2');
+        myGraph.addEdge('6', '5');
+        
+        myGraph.showConnections();
+        
   </code>
   </pre> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script> <script src="main.js"></script></body> </html>
