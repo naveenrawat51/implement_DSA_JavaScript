@@ -23,8 +23,8 @@
     <button class="button ds-btn" value="DOUBLY LINKEDLIST">DOUBLY LINKEDLIST</button>
     <button class="button ds-btn" value="BINARY SEARCH TREE">BINARY SEARCH TREE</button>
     <button class="button ds-btn" value="AVL BINARY SEARCH TREE">AVL BINARY SEARCH TREE</button>
-    <button class="button ds-btn" value="MIN HEAP">MIN HEAP</button>
-    <!-- <button class="button ds-btn" value="GRAPH">GRAPH</button> -->
+    <button class="button ds-btn" value="MIN HEAP">HEAPS</button>
+    <button class="button ds-btn" value="GRAPHS">GRAPHS</button>
 </div>
 
 <div id="complexityContainer" style="text-align: center;" class="hide">
@@ -1153,6 +1153,65 @@ console.log(ll.printLinkedList());
   </pre>
 </div>
 <!-- Min Heap implementation ends here -->
+
+
+<!-- Graphs implementation starts here -->
+<div data-type="GRAPHS" class="hide codeSnippet">
+    <pre><code class="language-javascript" >
+        class Graph {
+            constructor() {
+                this.numberOfNodes = 0;
+                this.adjacentList = {}
+            };
+        
+            addVertex(node){
+                this.adjacentList[node] = [];
+                this.numberOfNodes += 1;
+            }
+        
+            addEdge(node1, node2) {
+                 this.adjacentList[node1].push(node2);
+                 this.adjacentList[node2].push(node1);
+            }
+        
+            showConnections() {
+                const allNodes = Object.keys(this.adjacentList);
+                for (let node of allNodes) { 
+                    let nodeConnections = this.adjacentList[node]; 
+                    let connections = ""; 
+                    let vertex;
+                    for (vertex of nodeConnections) {
+                      connections += vertex + " ";
+                    } 
+                    console.log(node + "-->" + connections); 
+                  }
+            }
+        }
+        
+        const myGraph = new Graph();
+        myGraph.addVertex('0');
+        myGraph.addVertex('1');
+        myGraph.addVertex('2');
+        myGraph.addVertex('3');
+        myGraph.addVertex('4');
+        myGraph.addVertex('5');
+        myGraph.addVertex('6');
+        
+        myGraph.addEdge('3', '1');
+        myGraph.addEdge('3', '4');
+        myGraph.addEdge('4', '2');
+        myGraph.addEdge('4', '5');
+        myGraph.addEdge('1', '2');
+        myGraph.addEdge('1', '0');
+        myGraph.addEdge('0', '2');
+        myGraph.addEdge('6', '5');
+        
+        myGraph.showConnections();
+        
+  </code>
+  </pre>
+</div>
+<!-- Graphs implementation ends here -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
 </body>
