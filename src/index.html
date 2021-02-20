@@ -1,113 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
-/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css" />
     <title>Document</title>
 </head>
+
 <body>
     <div id="homeButtonContainer" class="go-to-home">
         <button class="button go-home hide" value="Go To HOME">Go To HOME</button>
     </div>
     <div id="allBtnContainer">
         <div class="buttonContainer">
-        <div class="mainHeading"><h2 style="text-align: center;">Data Structures</h2></div>
-        <button class="button ds-btn" value="ARRAY">ARRAY</button>
-        <button class="button ds-btn" value="HASH TABLE">HASH TABLE</button>
-        <button class="button ds-btn" value="STACK">STACK</button>
-        <button class="button ds-btn" value="QUEUE">QUEUE</button>
-        <button class="button ds-btn" value="LINKEDLIST">LINKEDLIST</button>
-        <button class="button ds-btn" value="DOUBLY LINKEDLIST">DOUBLY LINKEDLIST</button>
-        <button class="button ds-btn" value="BINARY SEARCH TREE">BINARY SEARCH TREE</button>
-        <button class="button ds-btn" value="AVL BINARY SEARCH TREE">AVL BINARY SEARCH TREE</button>
-        <button class="button ds-btn" value="MIN HEAP">HEAPS</button>
-        <button class="button ds-btn" value="GRAPHS">GRAPHS</button>
+            <div class="mainHeading">
+                <h2 style="text-align: center;">Data Structures</h2>
+            </div>
+            <button class="button ds-btn" value="ARRAY">ARRAY</button>
+            <button class="button ds-btn" value="HASH TABLE">HASH TABLE</button>
+            <button class="button ds-btn" value="STACK">STACK</button>
+            <button class="button ds-btn" value="QUEUE">QUEUE</button>
+            <button class="button ds-btn" value="LINKEDLIST">LINKEDLIST</button>
+            <button class="button ds-btn" value="DOUBLY LINKEDLIST">DOUBLY LINKEDLIST</button>
+            <button class="button ds-btn" value="BINARY SEARCH TREE">BINARY SEARCH TREE</button>
+            <button class="button ds-btn" value="AVL BINARY SEARCH TREE">AVL BINARY SEARCH TREE</button>
+            <button class="button ds-btn" value="MIN HEAP">HEAPS</button>
+            <button class="button ds-btn" value="GRAPHS">GRAPHS</button>
         </div>
 
         <div class="buttonContainer">
-        <div class="mainHeading"><h2 style="text-align: center;">Sorting Algorithms</h2></div>
-        <button class="button ds-btn srt-btn" value="BUBBLE SORT">BUBBLE SORT</button>
-        <button class="button ds-btn srt-btn" value="SELECTION SORT">SELECTION SORT</button>
-        <button class="button ds-btn srt-btn" value="INSERTION SORT">INSERTION SORT</button>
-        <button class="button ds-btn srt-btn" value="MERGE SORT">MERGE SORT</button>
-        <button class="button ds-btn srt-btn" value="QUICK SORT">QUICK SORT</button>
+            <div class="mainHeading">
+                <h2 style="text-align: center;">Sorting Algorithms</h2>
+            </div>
+            <button class="button ds-btn srt-btn" value="BUBBLE SORT">BUBBLE SORT</button>
+            <button class="button ds-btn srt-btn" value="SELECTION SORT">SELECTION SORT</button>
+            <button class="button ds-btn srt-btn" value="INSERTION SORT">INSERTION SORT</button>
+            <button class="button ds-btn srt-btn" value="MERGE SORT">MERGE SORT</button>
+            <button class="button ds-btn srt-btn" value="QUICK SORT">QUICK SORT</button>
         </div>
 
         <div class="buttonContainer">
-        <div class="mainHeading"><h2 style="text-align: center;">Searching Algorithms</h2></div>
-        <button class="button ds-btn srh-btn" value="BFS">BFS(BREADTH FIRST SEARCH)</button>
-        <button class="button ds-btn srh-btn" value="DFC">DFS(DEPTH FIRST SEARCH)</button>
-        <button class="button ds-btn srh-btn" value="DIJKSTRA">DIJKSTRA</button>
-        <button class="button ds-btn srh-btn" value="BELLMAN-FORD">BELLMAN-FORD</button>
-        <button class="button ds-btn dp-btn" value="DYNAMIC PROGRAMMING">DYNAMIC PROGRAMMING</button>
+            <div class="mainHeading">
+                <h2 style="text-align: center;">Searching Algorithms</h2>
+            </div>
+            <button class="button ds-btn srh-btn" value="BFS">BFS(BREADTH FIRST SEARCH)</button>
+            <button class="button ds-btn srh-btn" value="DFC">DFS(DEPTH FIRST SEARCH)</button>
+            <button class="button ds-btn srh-btn" value="DIJKSTRA">DIJKSTRA</button>
+            <button class="button ds-btn srh-btn" value="BELLMAN-FORD">BELLMAN-FORD</button>
+            <button class="button ds-btn dp-btn" value="DYNAMIC PROGRAMMING">DYNAMIC PROGRAMMING</button>
         </div>
     </div>
 
-<div id="complexityContainer" style="text-align: center;" class="hide">
-    <table class="table table-bordered table-striped">
+    <div id="complexityContainer" style="text-align: center;" class="hide">
+        <table class="table table-bordered table-striped">
 
-        <tbody>
-        <tr>
-          <th>Data Structure</th>
-          <th colspan="8">Time Complexity</th>
-          <th>Space Complexity</th>
-        </tr>
-        <tr>
-          <th></th>
-          <th colspan="4">Average</th>
-          <th colspan="4">Worst</th>
-          <th>Worst</th>
-        </tr>
-        <tr>
-          <th></th>
-          <th>Access</th>
-          <th>Search</th>
-          <th>Insertion</th>
-          <th>Deletion</th>
-          <th>Access</th>
-          <th>Search</th>
-          <th>Insertion</th>
-          <th>Deletion</th>
-          <th></th>
-        </tr>
-    
-        <tr id="complexityData">
-          
-        </tr>
-    
-    </tbody></table>
-</div>
-<div id="sortComplexityContainer" style="text-align: center;" class="hide">
-    <table class="table table-bordered table-striped">
+            <tbody>
+                <tr>
+                    <th>Data Structure</th>
+                    <th colspan="8">Time Complexity</th>
+                    <th>Space Complexity</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th colspan="4">Average</th>
+                    <th colspan="4">Worst</th>
+                    <th>Worst</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>Access</th>
+                    <th>Search</th>
+                    <th>Insertion</th>
+                    <th>Deletion</th>
+                    <th>Access</th>
+                    <th>Search</th>
+                    <th>Insertion</th>
+                    <th>Deletion</th>
+                    <th></th>
+                </tr>
 
-        <tbody>
-        <tr>
-          <th>Sorting Algorithms</th>
-          <th colspan="3">Time Complexity</th>
-          <th>Space Complexity</th>
-        </tr>
-        <tr>
-          <th></th>
-          <th colspan="1">Best</th>
-          <th colspan="1">Average</th>
-          <th colspan="1">Worst</th>
-          <th>Worst</th>
-        </tr>
-    
-        <tr id="sortComplexityData">
-          
-        </tr>
-    
-    </tbody></table>
-</div>
+                <tr id="complexityData">
 
-<!-- array implementation starts here -->
-<div data-type="ARRAY" class="hide codeSnippet">
-    <pre><code class="language-javascript" >
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div id="sortComplexityContainer" style="text-align: center;" class="hide">
+        <table class="table table-bordered table-striped">
+
+            <tbody>
+                <tr>
+                    <th>Sorting Algorithms</th>
+                    <th colspan="3">Time Complexity</th>
+                    <th>Space Complexity</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th colspan="1">Best</th>
+                    <th colspan="1">Average</th>
+                    <th colspan="1">Worst</th>
+                    <th>Worst</th>
+                </tr>
+
+                <tr id="sortComplexityData">
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- array implementation starts here -->
+    <div data-type="ARRAY" class="hide codeSnippet">
+        <pre><code class="language-javascript" >
       class Myarray {
         constructor(size) {
             (this.data = {}), (this.length = 0);
@@ -170,12 +177,12 @@
     console.log(array1.filter((element) => element > 10));
   </code>
   </pre>
-</div>
-<!-- array implementation ends here -->
+    </div>
+    <!-- array implementation ends here -->
 
-<!-- stack implementation starts here -->
-<div data-type="STACK" class="hide codeSnippet">
-    <pre><code class="language-javascript" >
+    <!-- stack implementation starts here -->
+    <div data-type="STACK" class="hide codeSnippet">
+        <pre><code class="language-javascript" >
         class Mystack {
             constructor(){
                 this.count = 0;
@@ -225,12 +232,12 @@
         
   </code>
   </pre>
-</div>
-<!-- stack implementation ends here -->
+    </div>
+    <!-- stack implementation ends here -->
 
-<!-- Linked List implementation starts here -->
-<div data-type="LINKEDLIST" class="hide codeSnippet">
-    <pre><code class="language-javascript" >
+    <!-- Linked List implementation starts here -->
+    <div data-type="LINKEDLIST" class="hide codeSnippet">
+        <pre><code class="language-javascript" >
 // new node structure
 class Node {
     constructor(value) {
@@ -408,12 +415,12 @@ console.log(ll.reverse());
 console.log(ll.printLinkedList());
   </code>
   </pre>
-</div>
-<!-- Linked List implementation ends here -->
+    </div>
+    <!-- Linked List implementation ends here -->
 
-<!-- Doubly Linked List implementation starts here -->
-<div data-type="DOUBLY LINKEDLIST" class="hide codeSnippet">
-    <pre><code class="language-javascript" >
+    <!-- Doubly Linked List implementation starts here -->
+    <div data-type="DOUBLY LINKEDLIST" class="hide codeSnippet">
+        <pre><code class="language-javascript" >
         // new node structure
         class Node {
             constructor(value) {
@@ -559,12 +566,12 @@ console.log(ll.printLinkedList());
         console.log(ll.search(555));
   </code>
   </pre>
-</div>
-<!-- Doubly Linked List implementation ends here -->
+    </div>
+    <!-- Doubly Linked List implementation ends here -->
 
-<!-- Hash Table implementation starts here -->
-<div data-type="HASH TABLE" class="hide codeSnippet">
-    <pre><code class="language-javascript" >
+    <!-- Hash Table implementation starts here -->
+    <div data-type="HASH TABLE" class="hide codeSnippet">
+        <pre><code class="language-javascript" >
         class HashTable {
             constructor(size) {
                 this.data = new Array(size);
@@ -620,13 +627,13 @@ console.log(ll.printLinkedList());
         
   </code>
   </pre>
-</div>
-<!-- Hash Table implementation ends here -->
+    </div>
+    <!-- Hash Table implementation ends here -->
 
 
-<!-- Binary Search Tree implementation starts here -->
-<div data-type="BINARY SEARCH TREE" class="hide codeSnippet">
-    <pre><code class="language-javascript" >
+    <!-- Binary Search Tree implementation starts here -->
+    <div data-type="BINARY SEARCH TREE" class="hide codeSnippet">
+        <pre><code class="language-javascript" >
         class Node {
             constructor(value) {
                 this.value = value;
@@ -778,13 +785,13 @@ console.log(ll.printLinkedList());
         
   </code>
   </pre>
-</div>
-<!-- Binary Search Tree implementation ends here -->
+    </div>
+    <!-- Binary Search Tree implementation ends here -->
 
 
-<!-- AVL Binary Search Tree implementation starts here -->
-<div data-type="AVL BINARY SEARCH TREE" class="hide codeSnippet">
-    <pre><code class="language-javascript" > 
+    <!-- AVL Binary Search Tree implementation starts here -->
+    <div data-type="AVL BINARY SEARCH TREE" class="hide codeSnippet">
+        <pre><code class="language-javascript" > 
         class Node {
             constructor(value) {
                 this.value = value;
@@ -1014,13 +1021,13 @@ console.log(ll.printLinkedList());
         
   </code>
   </pre>
-</div>
-<!-- AVL Binary Search Tree implementation ends here -->
+    </div>
+    <!-- AVL Binary Search Tree implementation ends here -->
 
 
-<!-- Queue implementation starts here -->
-<div data-type="QUEUE" class="hide codeSnippet">
-    <pre><code class="language-javascript" >
+    <!-- Queue implementation starts here -->
+    <div data-type="QUEUE" class="hide codeSnippet">
+        <pre><code class="language-javascript" >
         class Node {
             constructor(value) {
                 this.value = value;
@@ -1079,13 +1086,13 @@ console.log(ll.printLinkedList());
         console.log(queue.peek()); 
   </code>
   </pre>
-</div>
-<!-- Queue implementation ends here -->
+    </div>
+    <!-- Queue implementation ends here -->
 
 
-<!-- Min Heap implementation starts here -->
-<div data-type="MIN HEAP" class="hide codeSnippet">
-    <pre><code class="language-javascript" >
+    <!-- Min Heap implementation starts here -->
+    <div data-type="MIN HEAP" class="hide codeSnippet">
+        <pre><code class="language-javascript" >
         class MinHeap {
             constructor() {
                 this.heap = [null];
@@ -1195,13 +1202,13 @@ console.log(ll.printLinkedList());
         
   </code>
   </pre>
-</div>
-<!-- Min Heap implementation ends here -->
+    </div>
+    <!-- Min Heap implementation ends here -->
 
 
-<!-- Graphs implementation starts here -->
-<div data-type="GRAPHS" class="hide codeSnippet">
-    <pre><code class="language-javascript" >
+    <!-- Graphs implementation starts here -->
+    <div data-type="GRAPHS" class="hide codeSnippet">
+        <pre><code class="language-javascript" >
         class Graph {
             constructor() {
                 this.numberOfNodes = 0;
@@ -1254,13 +1261,13 @@ console.log(ll.printLinkedList());
         
   </code>
   </pre>
-</div>
-<!-- Graphs implementation ends here -->
+    </div>
+    <!-- Graphs implementation ends here -->
 
 
-<!-- bubble sort implementation starts here -->
-<div data-type="BUBBLE SORT" class="hide codeSnippet">
-    <pre><code class="language-javascript" >
+    <!-- bubble sort implementation starts here -->
+    <div data-type="BUBBLE SORT" class="hide codeSnippet">
+        <pre><code class="language-javascript" >
         function bubbleSort(array) {
             const length = array.length;
           
@@ -1282,13 +1289,13 @@ console.log(ll.printLinkedList());
         bubbleSort(numbers);         
   </code>
   </pre>
-</div>
-<!-- bubble sort implementation ends here -->
+    </div>
+    <!-- bubble sort implementation ends here -->
 
 
-<!-- selection sort implementation starts here -->
-<div data-type="SELECTION SORT" class="hide codeSnippet">
-    <pre><code class="language-javascript" >
+    <!-- selection sort implementation starts here -->
+    <div data-type="SELECTION SORT" class="hide codeSnippet">
+        <pre><code class="language-javascript" >
         function selectionSort(array) {
             const length = array.length;
         
@@ -1311,13 +1318,13 @@ console.log(ll.printLinkedList());
         selectionSort(numbers);        
   </code>
   </pre>
-</div>
-<!-- selection sort implementation ends here -->
+    </div>
+    <!-- selection sort implementation ends here -->
 
 
-<!-- insertion sort implementation starts here -->
-<div data-type="INSERTION SORT" class="hide codeSnippet">
-    <pre><code class="language-javascript" >
+    <!-- insertion sort implementation starts here -->
+    <div data-type="INSERTION SORT" class="hide codeSnippet">
+        <pre><code class="language-javascript" >
         function insetionSort(array) {
             const length = array.length;
         
@@ -1340,9 +1347,52 @@ console.log(ll.printLinkedList());
         insetionSort(numbers);        
   </code>
   </pre>
-</div>
-<!-- insertion sort implementation ends here -->
+    </div>
+    <!-- insertion sort implementation ends here -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+
+    <!-- merge sort implementation starts here -->
+    <div data-type="MERGE SORT" class="hide codeSnippet">
+        <pre><code class="language-javascript" >
+        function mergeSort(array) {
+            if (array.length === 1) {
+                return array;
+            }
+        
+            const mid = Math.floor(array.length / 2);
+            const leftArray = array.slice(0, mid);
+            const rightArray = array.slice(mid);
+        
+            return merge(mergeSort(leftArray), mergeSort(rightArray));
+        }
+        
+        function merge(left, right) {
+            const result = [];
+            let leftIndex = 0;
+            let rightIndex = 0;
+        
+            while (leftIndex &lt; left.length && rightIndex &lt; right.length) {
+                if (left[leftIndex] &lt; right[rightIndex]) {
+                    result.push(left[leftIndex]);
+                    leftIndex++;
+                } else {
+                    result.push(right[rightIndex]);
+                    rightIndex++;
+                }
+            }
+        
+            return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
+        }
+        
+        const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+        console.log(mergeSort(numbers));
+          
+  </code>
+  </pre>
+    </div>
+    <!-- merge sort implementation ends here -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
 </body>
+
 </html>

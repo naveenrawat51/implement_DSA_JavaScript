@@ -31,13 +31,13 @@ export const insertionSort = {
     ],
 };
 
-export const quickSort = {
-    type: 'Bubble sort',
-    url: 'https://en.wikipedia.org/wiki/Bubble_sort',
+export const mergeSort = {
+    type: 'Merge sort',
+    url: 'https://en.wikipedia.org/wiki/Merge_sort',
     complexityData: [
         { color: 'orange', complexity: 'Θ(n log(n))' },
         { color: 'orange', complexity: 'Θ(n log(n))' },
-        { color: 'red', complexity: 'Θ()n^2)' },
-        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+        { color: 'orange', complexity: 'Θ(n log(n))' },
+        { color: 'yellow', complexity: 'Θ(n)' },
     ],
 };
