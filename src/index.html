@@ -1285,6 +1285,35 @@ console.log(ll.printLinkedList());
 </div>
 <!-- bubble sort implementation ends here -->
 
+
+<!-- selection sort implementation starts here -->
+<div data-type="SELECTION SORT" class="hide codeSnippet">
+    <pre><code class="language-javascript" >
+        function selectionSort(array) {
+            const length = array.length;
+        
+            for (let i = 0; i &lt; length; i++) {
+                const min = i;
+                const temp = array[i];
+                for (let j = i + 1; j &lt; length; j++) {
+                    if (array[i] > array[j]) {
+                       min = j;
+                    }
+                }
+                array[i] = array[min];
+                array[min] = temp;
+            }
+        
+            return array;
+        }
+        
+        const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+        selectionSort(numbers);        
+  </code>
+  </pre>
+</div>
+<!-- selection sort implementation ends here -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
 </body>
 </html>
