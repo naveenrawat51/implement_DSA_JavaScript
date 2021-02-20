@@ -92,6 +92,9 @@ window.addEventListener('click', (event) => {
                     return;
                 case 'SELECTION SORT':
                     showComplexity(sortComplexityData.selectionSort, 'sort');
+                    return;
+                case 'INSERTION SORT':
+                    showComplexity(sortComplexityData.insertionSort, 'sort');
             }
         });
 
@@ -102,24 +105,3 @@ window.addEventListener('click', (event) => {
         });
     }
 });
-
-function selectionSort(array) {
-    const length = array.length;
-
-    for (let i = 0; i < length; i++) {
-        const min = i;
-        const temp = array[i];
-        for (let j = i + 1; j < length; j++) {
-            if (array[i] > array[j]) {
-                min = j;
-            }
-        }
-        array[i] = array[min];
-        array[min] = temp;
-    }
-
-    return array;
-}
-
-const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
-selectionSort(numbers);

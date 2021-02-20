@@ -1128,4 +1128,26 @@ console.log(ll.printLinkedList());
         const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
         selectionSort(numbers);        
   </code>
+  </pre> </div> <div data-type="INSERTION SORT" class="hide codeSnippet"> <pre><code class="language-javascript">
+        function insetionSort(array) {
+            const length = array.length;
+        
+            for (let i = 0; i &lt; length; i++) {
+                if (array[0] > array[i]) {
+                    array.unshift(array.splice(i, 1)[0])
+                } else {
+                    for (let j = 1; j &lt; i; j++) {
+                        if (array[i] &lt; array[j]) {
+                            array.splice(j, 0, array.splice(i,1)[0])
+                        }
+                    }
+                }
+            }
+        
+            return array;
+        }
+        
+        const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+        insetionSort(numbers);        
+  </code>
   </pre> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script> <script src="main.js"></script></body> </html>
