@@ -1,14 +1,15 @@
-$bg: pink;
+$bg: bisque;
 
 body { 
     background: $bg;
+    padding-top: 7px !important;
 }
 
 .button {
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 15px 10px;
     text-align: center;
     font-weight: bold;
     text-decoration: none;
@@ -16,10 +17,7 @@ body {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-  }
-
-  .hide {
-      display: none;
+    width: 300px;
   }
 
   body, html {
@@ -58,6 +56,9 @@ body {
   
   table {
     display: inline-block;
+    width: 927px;
+    background-color: aquamarine;
+    padding: 9px;
   }
   
   table code {
@@ -337,12 +338,13 @@ body {
   .buttonContainer {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
   }
 
   #allBtnContainer {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
 
     &.hide-heading {
       justify-content: center;
@@ -350,6 +352,43 @@ body {
       display: none;
       }
     }
+  }
+
+  .codeSnippet {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  };
+
+  .hide {
+    display: none;
+  }
+  .language-javascript {
+    width: 893px;
+    overflow: scroll;
+    background: azure;
+  }
+  @media only screen and (max-width: 600px) {
+    #homeButtonContainer {
+      position: inherit;
+      align-items: center;
+      width: 100%;
+    }
+
+    .codeSnippet, #complexityContainer, #sortComplexityContainer {
+      overflow: scroll;
+    }
+
+    .sort-table {
+      width: 546px;
+    }
+  }
+
+  .sort-table {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
   }
   
   
