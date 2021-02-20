@@ -3,6 +3,8 @@ $bg: bisque;
 body { 
     background: $bg;
     padding-top: 7px !important;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .button {
@@ -389,6 +391,17 @@ body {
     display: flex;
     justify-content: center;
     margin: auto;
+  }
+
+  .bottom-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+
+    a {
+      font-weight: bold;
+      color: mediumblue;
+    }
   }
   
   
