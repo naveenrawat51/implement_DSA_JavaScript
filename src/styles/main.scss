@@ -309,5 +309,47 @@ body {
   #page.pdf a {
     text-decoration: none;
   }
+
+  .srt-btn {
+    background-color: darkcyan;
+  }
+
+  .srh-btn {
+    background-color: slateblue;
+  }
+
+  .dp-btn {
+    background-color: crimson;
+  }
+
+  .go-to-home {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: space-between;
+    position: absolute;
+
+    .go-home {
+      background-color: blue;
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+  }
+
+  #allBtnContainer {
+    display: flex;
+    justify-content: space-evenly;
+
+    &.hide-heading {
+      justify-content: center;
+      .mainHeading {
+      display: none;
+      }
+    }
+  }
   
   

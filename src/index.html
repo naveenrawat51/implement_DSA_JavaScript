@@ -10,27 +10,48 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="mainHeading"><h1 style="text-align: center;">Data Structures and Algorithms</h1></div>
-    <div id="homeButtonContainer" class="go-to-home" style="display: flex; flex-direction: column; width: 300px; justify-content: space-between; position: absolute;">
-        <button class="button go-home hide" style="background-color: blue;" value="Go To HOME">Go To HOME</button>
+    <div id="homeButtonContainer" class="go-to-home">
+        <button class="button go-home hide" value="Go To HOME">Go To HOME</button>
     </div>
-    <div id="buttonContainer" style="display: flex; flex-direction: column; max-width: 400px; margin: auto; justify-content: space-between;">
-    <button class="button ds-btn" value="ARRAY">ARRAY</button>
-    <button class="button ds-btn" value="HASH TABLE">HASH TABLE</button>
-    <button class="button ds-btn" value="STACK">STACK</button>
-    <button class="button ds-btn" value="QUEUE">QUEUE</button>
-    <button class="button ds-btn" value="LINKEDLIST">LINKEDLIST</button>
-    <button class="button ds-btn" value="DOUBLY LINKEDLIST">DOUBLY LINKEDLIST</button>
-    <button class="button ds-btn" value="BINARY SEARCH TREE">BINARY SEARCH TREE</button>
-    <button class="button ds-btn" value="AVL BINARY SEARCH TREE">AVL BINARY SEARCH TREE</button>
-    <button class="button ds-btn" value="MIN HEAP">HEAPS</button>
-    <button class="button ds-btn" value="GRAPHS">GRAPHS</button>
-</div>
+    <div id="allBtnContainer">
+        <div class="buttonContainer">
+        <div class="mainHeading"><h2 style="text-align: center;">Data Structures</h2></div>
+        <button class="button ds-btn" value="ARRAY">ARRAY</button>
+        <button class="button ds-btn" value="HASH TABLE">HASH TABLE</button>
+        <button class="button ds-btn" value="STACK">STACK</button>
+        <button class="button ds-btn" value="QUEUE">QUEUE</button>
+        <button class="button ds-btn" value="LINKEDLIST">LINKEDLIST</button>
+        <button class="button ds-btn" value="DOUBLY LINKEDLIST">DOUBLY LINKEDLIST</button>
+        <button class="button ds-btn" value="BINARY SEARCH TREE">BINARY SEARCH TREE</button>
+        <button class="button ds-btn" value="AVL BINARY SEARCH TREE">AVL BINARY SEARCH TREE</button>
+        <button class="button ds-btn" value="MIN HEAP">HEAPS</button>
+        <button class="button ds-btn" value="GRAPHS">GRAPHS</button>
+        </div>
+
+        <div class="buttonContainer">
+        <div class="mainHeading"><h2 style="text-align: center;">Sorting Algorithms</h2></div>
+        <button class="button ds-btn srt-btn" value="BUBBLE SORT">BUBBLE SORT</button>
+        <button class="button ds-btn srt-btn" value="SELECTION SORT">SELECTION SORT</button>
+        <button class="button ds-btn srt-btn" value="INSERTION SORT">INSERTION SORT</button>
+        <button class="button ds-btn srt-btn" value="MERGE SORT">MERGE SORT</button>
+        <button class="button ds-btn srt-btn" value="QUICK SORT">QUICK SORT</button>
+        </div>
+
+        <div class="buttonContainer">
+        <div class="mainHeading"><h2 style="text-align: center;">Searching Algorithms</h2></div>
+        <button class="button ds-btn srh-btn" value="BFS">BFS(BREADTH FIRST SEARCH)</button>
+        <button class="button ds-btn srh-btn" value="DFC">DFS(DEPTH FIRST SEARCH)</button>
+        <button class="button ds-btn srh-btn" value="DIJKSTRA">DIJKSTRA</button>
+        <button class="button ds-btn srh-btn" value="BELLMAN-FORD">BELLMAN-FORD</button>
+        <button class="button ds-btn dp-btn" value="DYNAMIC PROGRAMMING">DYNAMIC PROGRAMMING</button>
+        </div>
+    </div>
 
 <div id="complexityContainer" style="text-align: center;" class="hide">
     <table class="table table-bordered table-striped">
 
-        <tbody><tr>
+        <tbody>
+        <tr>
           <th>Data Structure</th>
           <th colspan="8">Time Complexity</th>
           <th>Space Complexity</th>
@@ -55,6 +76,29 @@
         </tr>
     
         <tr id="complexityData">
+          
+        </tr>
+    
+    </tbody></table>
+</div>
+<div id="sortComplexityContainer" style="text-align: center;" class="hide">
+    <table class="table table-bordered table-striped">
+
+        <tbody>
+        <tr>
+          <th>Sorting Algorithms</th>
+          <th colspan="3">Time Complexity</th>
+          <th>Space Complexity</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th colspan="1">Best</th>
+          <th colspan="1">Average</th>
+          <th colspan="1">Worst</th>
+          <th>Worst</th>
+        </tr>
+    
+        <tr id="sortComplexityData">
           
         </tr>
     
@@ -1212,6 +1256,34 @@ console.log(ll.printLinkedList());
   </pre>
 </div>
 <!-- Graphs implementation ends here -->
+
+
+<!-- bubble sort implementation starts here -->
+<div data-type="BUBBLE SORT" class="hide codeSnippet">
+    <pre><code class="language-javascript" >
+        function bubbleSort(array) {
+            const length = array.length;
+          
+            for (let i = 0; i &lt; length; i++) {
+                for (let j = 0; j &lt; length; j++) {
+                    if (array[j] > array[j+1]) {
+                        const temp = array[j];
+                        array[j] = array[j+1];
+                        array[j+1] = temp;
+                    }
+                }
+              console.log('after sort: ', array);
+            }
+        
+            return array;
+        }
+        
+        const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+        bubbleSort(numbers);         
+  </code>
+  </pre>
+</div>
+<!-- bubble sort implementation ends here -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
 </body>

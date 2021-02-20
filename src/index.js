@@ -1,12 +1,19 @@
 import './styles/main.scss';
 import * as complexityData from './DS_types/allComplexityData';
+import * as sortComplexityData from './sorting-algorithms/allComplexityData';
 
 const getAllBtn = Array.prototype.slice.call(
     document.querySelectorAll('button')
 );
-const mainHeading = document.getElementById('mainHeading');
+const mainContainer = document.getElementById('allBtnContainer');
 const complexityContainer = document.getElementById('complexityContainer');
+const sortComplexityContainer = document.getElementById(
+    'sortComplexityContainer'
+);
 const complexityDataRowElement = document.getElementById('complexityData');
+const sortComplexityDataRowElement = document.getElementById(
+    'sortComplexityData'
+);
 const codeSnippetContainers = document.querySelectorAll('.codeSnippet');
 
 function generateRowData(data) {
@@ -17,9 +24,16 @@ function generateRowData(data) {
     return result;
 }
 
-const showComplexity = (complexityData) => {
-    complexityContainer.classList.remove('hide');
-    complexityDataRowElement.innerHTML = generateRowData(complexityData);
+const showComplexity = (complexityData, type) => {
+    if (type == 'sort') {
+        sortComplexityContainer.classList.remove('hide');
+        sortComplexityDataRowElement.innerHTML = generateRowData(
+            complexityData
+        );
+    } else {
+        complexityContainer.classList.remove('hide');
+        complexityDataRowElement.innerHTML = generateRowData(complexityData);
+    }
 };
 
 window.addEventListener('click', (event) => {
@@ -28,11 +42,12 @@ window.addEventListener('click', (event) => {
         getAllBtn.forEach((element) => {
             if (event.target.value === 'Go To HOME') {
                 element.classList.remove('hide');
-                mainHeading.classList.remove('hide');
+                mainContainer.classList.remove('hide-heading');
                 event.target.classList.add('hide');
                 complexityContainer.classList.add('hide');
+                sortComplexityContainer.classList.add('hide');
             } else {
-                mainHeading.classList.add('hide');
+                mainContainer.classList.add('hide-heading');
                 if (
                     element.value !== event.target.value &&
                     element.classList.contains('ds-btn')
@@ -72,6 +87,8 @@ window.addEventListener('click', (event) => {
                 case 'MIN HEAP':
                     showComplexity(complexityData.heap);
                     return;
+                case 'BUBBLE SORT':
+                    showComplexity(sortComplexityData.bubbleSort, 'sort');
             }
         });
 
