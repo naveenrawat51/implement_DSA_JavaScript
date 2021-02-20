@@ -1150,4 +1150,39 @@ console.log(ll.printLinkedList());
         const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
         insetionSort(numbers);        
   </code>
+  </pre> </div> <div data-type="MERGE SORT" class="hide codeSnippet"> <pre><code class="language-javascript">
+        function mergeSort(array) {
+            if (array.length === 1) {
+                return array;
+            }
+        
+            const mid = Math.floor(array.length / 2);
+            const leftArray = array.slice(0, mid);
+            const rightArray = array.slice(mid);
+        
+            return merge(mergeSort(leftArray), mergeSort(rightArray));
+        }
+        
+        function merge(left, right) {
+            const result = [];
+            let leftIndex = 0;
+            let rightIndex = 0;
+        
+            while (leftIndex &lt; left.length && rightIndex &lt; right.length) {
+                if (left[leftIndex] &lt; right[rightIndex]) {
+                    result.push(left[leftIndex]);
+                    leftIndex++;
+                } else {
+                    result.push(right[rightIndex]);
+                    rightIndex++;
+                }
+            }
+        
+            return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
+        }
+        
+        const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+        console.log(mergeSort(numbers));
+          
+  </code>
   </pre> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script> <script src="main.js"></script></body> </html>

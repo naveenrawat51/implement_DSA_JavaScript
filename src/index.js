@@ -95,6 +95,9 @@ window.addEventListener('click', (event) => {
                     return;
                 case 'INSERTION SORT':
                     showComplexity(sortComplexityData.insertionSort, 'sort');
+                    return;
+                case 'MERGE SORT':
+                    showComplexity(sortComplexityData.mergeSort, 'sort');
             }
         });
 
