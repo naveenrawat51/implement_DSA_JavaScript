@@ -9,6 +9,17 @@ export const bubbleSort = {
     ],
 };
 
+export const selectionSort = {
+    type: 'Selection sort',
+    url: 'https://en.wikipedia.org/wiki/Selection_sort',
+    complexityData: [
+        { color: 'red', complexity: 'Θ(n^2)' },
+        { color: 'red', complexity: 'Θ(n^2)' },
+        { color: 'red', complexity: 'Θ(n^2)' },
+        { color: 'green', complexity: 'Θ(1)' },
+    ],
+};
+
 export const quickSort = {
     type: 'Bubble sort',
     url: 'https://en.wikipedia.org/wiki/Bubble_sort',
