@@ -1392,6 +1392,52 @@ console.log(ll.printLinkedList());
     </div>
     <!-- merge sort implementation ends here -->
 
+
+    <!-- quick sort implementation starts here -->
+    <div data-type="QUICK SORT" class="hide codeSnippet">
+        <pre><code class="language-javascript" >
+            function quickSort(array, lowerBound, upperBound) {
+                if (lowerBound &lt; upperBound) {
+                    const partitionIndex = partition(array, lowerBound, upperBound);
+            
+                    quickSort(array, lowerBound, partitionIndex - 1);
+                    quickSort(array, partitionIndex + 1, upperBound);
+                }
+            
+                return array;
+            }
+            
+            function partition(array, lowerBound, upperBound) {
+                let pivot = array[lowerBound];
+                let start = lowerBound;
+                let end = upperBound;
+            
+                while (start &lt; end) {
+                    while (array[start] &lt;= pivot) {
+                        start++;
+                    }
+            
+                    while (array[end] > pivot) {
+                        end--;
+                    }
+            
+                    if (start &lt; end) {
+                        [array[end], array[start]] = [array[start], array[end]];
+                    }
+                }
+            
+                [array[lowerBound], array[end]] = [array[end], array[lowerBound]];
+            
+                return end;
+            }
+            
+            const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+            console.log(quickSort(numbers, 0, 10));      
+  </code>
+  </pre>
+    </div>
+    <!-- quick sort implementation ends here -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
 </body>
 

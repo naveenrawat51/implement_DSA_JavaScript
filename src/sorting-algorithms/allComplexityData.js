@@ -41,3 +41,14 @@ export const mergeSort = {
         { color: 'yellow', complexity: 'Θ(n)' },
     ],
 };
+
+export const quickSort = {
+    type: 'Quick sort',
+    url: 'https://en.wikipedia.org/wiki/Quicksort',
+    complexityData: [
+        { color: 'orange', complexity: 'Θ(n log(n))' },
+        { color: 'orange', complexity: 'Θ(n log(n))' },
+        { color: 'red', complexity: 'Θ(n^2)' },
+        { color: 'yellow-green', complexity: 'Θ(log(n))' },
+    ],
+};
