@@ -7,7 +7,7 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
         />
-        <title>Document</title>
+        <title>Data Structure and Algorithms</title>
     </head>
 
     <body>
@@ -19,7 +19,7 @@
         <div id="allBtnContainer">
             <div class="buttonContainer">
                 <div class="mainHeading">
-                    <h2 style="text-align: center; color: #4caf50">
+                    <h2 style="color: #4caf50">
                         Data Structures
                     </h2>
                 </div>
@@ -47,7 +47,7 @@
 
             <div class="buttonContainer">
                 <div class="mainHeading">
-                    <h2 style="text-align: center; color: darkcyan">
+                    <h2 style="color: darkcyan">
                         Sorting Algorithms
                     </h2>
                 </div>
@@ -70,7 +70,7 @@
 
             <div class="buttonContainer">
                 <div class="mainHeading">
-                    <h2 style="text-align: center; color: slateblue">
+                    <h2 style="color: slateblue">
                         Searching Algorithms
                     </h2>
                 </div>
@@ -91,7 +91,7 @@
                     value="DYNAMIC PROGRAMMING"
                 >
                     DYNAMIC PROGRAMMING
-                </button>
+                </button> 
             </div>
         </div>
 
@@ -1969,12 +1969,336 @@ console.log(ll.printLinkedList());
            </pre>
         </div>
         <!-- dynamic programming implementation ends here -->
+
+
+        <!-- cheat sheet starts here -->
+        <div data-type="cheat sheet" class="hide codeSnippet" style="flex-direction: column;">
+             <img src="./images/big-o.png" class="big-o" />
+
+            <h2 class="data-structures">Data Structure Operations</h2>
+            <div class="complexityContainer">
+            <table class="table table-bordered complexity-table">
+
+                <tbody><tr>
+                  <th>Data Structure</th>
+                  <th colspan="8">Time Complexity</th>
+                  <th>Space Complexity</th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th colspan="4">Average</th>
+                  <th colspan="4">Worst</th>
+                  <th>Worst</th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>Access</th>
+                  <th>Search</th>
+                  <th>Insertion</th>
+                  <th>Deletion</th>
+                  <th>Access</th>
+                  <th>Search</th>
+                  <th>Insertion</th>
+                  <th>Deletion</th>
+                  <th></th>
+                </tr>
+            
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Array_data_structure">Array</a></td>
+                  <td><code class="green">Θ(1)</code></td>
+                  <td><code class="yellow">Θ(n)</code></td>
+                  <td><code class="yellow">Θ(n)</code></td>
+                  <td><code class="yellow">Θ(n)</code></td>
+                  <td><code class="green">O(1)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Stack_(abstract_data_type)">Stack</a></td>
+                  <td><code class="yellow">Θ(n)</code></td>
+                  <td><code class="yellow">Θ(n)</code></td>
+                  <td><code class="green">Θ(1)</code></td>
+                  <td><code class="green">Θ(1)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="green">O(1)</code></td>
+                  <td><code class="green">O(1)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Queue_(abstract_data_type)">Queue</a></td>
+                  <td><code class="yellow">Θ(n)</code></td>
+                  <td><code class="yellow">Θ(n)</code></td>
+                  <td><code class="green">Θ(1)</code></td>
+                  <td><code class="green">Θ(1)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="green">O(1)</code></td>
+                  <td><code class="green">O(1)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Singly_linked_list#Singly_linked_lists">Singly-Linked List</a></td>
+                  <td><code class="yellow">Θ(n)</code></td>
+                  <td><code class="yellow">Θ(n)</code></td>
+                  <td><code class="green">Θ(1)</code></td>
+                  <td><code class="green">Θ(1)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="green">O(1)</code></td>
+                  <td><code class="green">O(1)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Doubly_linked_list">Doubly-Linked List</a></td>
+                  <td><code class="yellow">Θ(n)</code></td>
+                  <td><code class="yellow">Θ(n)</code></td>
+                  <td><code class="green">Θ(1)</code></td>
+                  <td><code class="green">Θ(1)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="green">O(1)</code></td>
+                  <td><code class="green">O(1)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Skip_list">Skip List</a></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="orange">O(n log(n))</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Hash_table">Hash Table</a></td>
+                  <td><code class="gray">N/A</code></td>
+                  <td><code class="green">Θ(1)</code></td>
+                  <td><code class="green">Θ(1)</code></td>
+                  <td><code class="green">Θ(1)</code></td>
+                  <td><code class="gray">N/A</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Binary_search_tree">Binary Search Tree</a></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="https://en.wikipedia.org/wiki/Cartesian_tree">Cartesian Tree</a></td>
+                  <td><code class="gray">N/A</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="gray">N/A</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/B_tree">B-Tree</a></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Red-black_tree">Red-Black Tree</a></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="https://en.wikipedia.org/wiki/Splay_tree">Splay Tree</a></td>
+                  <td><code class="gray">N/A</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="gray">N/A</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/AVL_tree">AVL Tree</a></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/K-d_tree">KD Tree</a></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow-green">Θ(log(n))</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+            
+            </tbody>
+           </table>
+        </div>
+
+
+        <div class="complexityContainer">
+            <h2 class="sorting">Array Sorting Algorithms</h2>
+            <table class="table table-bordered table-striped sort-table">
+                <tbody><tr>
+                  <th>Algorithm</th>
+                  <th colspan="3">Time Complexity</th>
+                  <th>Space Complexity</th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>Best</th>
+                  <th>Average</th>
+                  <th>Worst</th>
+                  <th>Worst</th>
+                </tr>
+            
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Quicksort">Quicksort</a></td>
+                  <td><code class="orange">Ω(n log(n))</code></td>
+                  <td><code class="orange">Θ(n log(n))</code></td>
+                  <td><code class="red">O(n^2)</code></td>
+                  <td><code class="yellow-green">O(log(n))</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Merge_sort">Mergesort</a></td>
+                  <td><code class="orange">Ω(n log(n))</code></td>
+                  <td><code class="orange">Θ(n log(n))</code></td>
+                  <td><code class="orange">O(n log(n))</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Timsort">Timsort</a></td>
+                  <td><code class="yellow">Ω(n)</code></td>
+                  <td><code class="orange">Θ(n log(n))</code></td>
+                  <td><code class="orange">O(n log(n))</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Heapsort">Heapsort</a></td>
+                  <td><code class="orange">Ω(n log(n))</code></td>
+                  <td><code class="orange">Θ(n log(n))</code></td>
+                  <td><code class="orange">O(n log(n))</code></td>
+                  <td><code class="green">O(1)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Bubble_sort">Bubble Sort</a></td>
+                  <td><code class="yellow">Ω(n)</code></td>
+                  <td><code class="red">Θ(n^2)</code></td>
+                  <td><code class="red">O(n^2)</code></td>
+                  <td><code class="green">O(1)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Insertion_sort">Insertion Sort</a></td>
+                  <td><code class="yellow">Ω(n)</code></td>
+                  <td><code class="red">Θ(n^2)</code></td>
+                  <td><code class="red">O(n^2)</code></td>
+                  <td><code class="green">O(1)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Selection_sort">Selection Sort</a></td>
+                  <td><code class="red">Ω(n^2)</code></td>
+                  <td><code class="red">Θ(n^2)</code></td>
+                  <td><code class="red">O(n^2)</code></td>
+                  <td><code class="green">O(1)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="https://en.wikipedia.org/wiki/Tree_sort">Tree Sort</a></td>
+                  <td><code class="orange">Ω(n log(n))</code></td>
+                  <td><code class="orange">Θ(n log(n))</code></td>
+                  <td><code class="red">O(n^2)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="http://en.wikipedia.org/wiki/Shellsort">Shell Sort</a></td>
+                  <td><code class="orange">Ω(n log(n))</code></td>
+                  <td><code class="red">Θ(n(log(n))^2)</code></td>
+                  <td><code class="red">O(n(log(n))^2)</code></td>
+                  <td><code class="green">O(1)</code></td>
+                </tr>
+                <tr>
+                  <td><a rel="tooltip" title="Only for integers. k is a number of buckets" href="http://en.wikipedia.org/wiki/Bucket_sort">Bucket Sort</a></td>
+                  <td><code class="green">Ω(n+k)</code></td>
+                  <td><code class="green">Θ(n+k)</code></td>
+                  <td><code class="red">O(n^2)</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+                </tr>
+                <tr>
+                  <td><a rel="tooltip" title="Constant number of digits 'k'" href="http://en.wikipedia.org/wiki/Radix_sort">Radix Sort</a></td>
+                  <td><code class="green">Ω(nk)</code></td>
+                  <td><code class="green">Θ(nk)</code></td>
+                  <td><code class="green">O(nk)</code></td>
+                  <td><code class="yellow">O(n+k)</code></td>
+                </tr>
+                <tr>
+                  <td><a rel="tooltip" title="Difference between maximum and minimum number 'k'" href="https://en.wikipedia.org/wiki/Counting_sort">Counting Sort</a></td>
+                  <td><code class="green">Ω(n+k)</code></td>
+                  <td><code class="green">Θ(n+k)</code></td>
+                  <td><code class="green">O(n+k)</code></td>
+                  <td><code class="yellow">O(k)</code></td>
+                </tr>
+                <tr>
+                  <td><a href="https://en.wikipedia.org/wiki/Cubesort">Cubesort</a></td>
+                  <td><code class="yellow">Ω(n)</code></td>
+                  <td><code class="orange">Θ(n log(n))</code></td>
+                  <td><code class="orange">O(n log(n))</code></td>
+                  <td><code class="yellow">O(n)</code></td>
+               </tr>
+            
+            </tbody>
+        </table>
+        </div>
+        </div>
+      <!-- cheat sheet ends here -->
         <div class="bottom-container">
             <a
                 href="https://github.com/naveenrawat51/implement_DSA_JavaScript"
                 target="_blank"
                 >Visit Repo</a
             >
+            <button class="button ds-btn srt-btn cheat-sheet" value="cheat sheet">
+                    CHEAT SHEET
+                </button>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
     </body>
