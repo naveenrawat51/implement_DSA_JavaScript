@@ -342,6 +342,14 @@ body {
     flex-direction: column;
   }
 
+  .mainHeading {
+    h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align:center;
+    }
+  }
+
   #allBtnContainer {
     display: flex;
     justify-content: space-evenly;
@@ -351,6 +359,8 @@ body {
     &.hide-heading {
       justify-content: center;
       .mainHeading {
+        margin-top: 10px;
+        margin-bottom: 10px;
       display: none;
       }
     }
@@ -370,6 +380,14 @@ body {
     overflow: scroll;
     background: azure;
   }
+
+  .big-o {
+    height: 70%;
+    width: 70%;
+    display: block;
+    margin: auto;
+  }
+
   @media only screen and (max-width: 600px) {
     #homeButtonContainer {
       position: inherit;
@@ -377,16 +395,22 @@ body {
       width: 100%;
     }
 
-    .codeSnippet, #complexityContainer, #sortComplexityContainer {
+    .codeSnippet, #complexityContainer, #sortComplexityContainer, .complexityContainer {
       overflow: scroll;
     }
 
     .sort-table {
       width: 546px;
     }
+
+    .codeSnippet {
+      img {
+        width: 100%;
+      }
+    }
   }
 
-  .sort-table {
+  .sort-table, .complexity-table {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -402,6 +426,19 @@ body {
       font-weight: bold;
       color: mediumblue;
     }
+  }
+
+  .data-structures, .sorting {
+    text-align: center;;
+  }
+
+  .cheat-sheet {
+    background-color: #000;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    width: 140px
   }
   
   
