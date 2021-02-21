@@ -420,7 +420,8 @@ body {
   .bottom-container {
     width: 100%;
     text-align: center;
-    margin-bottom: 20px;
+    position: fixed;
+    bottom: 0;
 
     a {
       font-weight: bold;
