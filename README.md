@@ -1,6 +1,6 @@
 # Data Structure and Algorithms
 
-[![N|Solid](https://miro.medium.com/max/276/1%2AKpDOKMFAgDWaGTQHL0r70g.png)](https://nodesource.com/products/nsolid)
+[![N|Solid](https://miro.medium.com/max/276/1%2AKpDOKMFAgDWaGTQHL0r70g.png)]
 
 
 ## Content
