@@ -1665,4 +1665,46 @@ console.log(ll.printLinkedList());
                 console.log('inOrder: ', bst1.depthFirstSearchInOrder());
                 console.log('PostOrder: ', bst1.depthFirstSearchPostOrder());
                </code>
+           </pre> </div> <div data-type="DYNAMIC PROGRAMMING" class="hide codeSnippet"> <pre>
+               <code class="language-javascript">
+/*The core idea of Dynamic Programming is to avoid repeated work by remembering partial results 
+  and this concept finds it application in a lot of real life situations. In programming, Dynamic
+  Programming is a powerful technique that allows one to solve different types of problems in time
+  O(n2) or O(n3) for which a naive approach would take exponential time.*/
+               
+
+  // using recursion
+  let fibonacciCounter = 0;
+  function fibonacci(n) {
+      fibonacciCounter++;
+      if (n &lt; 2) {
+          return n;
+      }
+  
+      return fibonacci(n-1) + fibonacci(n-2);
+  }
+  
+  // dynamic Programming -- returning function as fibonacci to avoid gloabl scope using closure
+  let fibonacciCounterDP = 0;
+  function fibonacciDP() {
+      const cache = {};
+      return function fibonacci(n) {
+          fibonacciCounterDP++;
+          if (n in cache) {
+              return cache[n];
+          } else {
+              if (n &lt; 2) {
+                  return n;
+              } else {
+                  cache[n] = fibonacci(n-1) + fibonacci(n-2);
+                  return cache[n];
+              }
+          }
+      }
+  } 
+  
+  console.log(fibonacci(7), fibonacciCounter);
+  const fib = fibonacciDP();
+  console.log(fib(7), fibonacciCounterDP);
+               </code>
            </pre> </div> <div class="bottom-container"> <a href="https://github.com/naveenrawat51/implement_DSA_JavaScript" target="_blank">Visit Repo</a> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script> <script src="main.js"></script></body> </html> 
