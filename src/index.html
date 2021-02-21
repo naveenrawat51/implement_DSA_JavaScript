@@ -1,119 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
+        />
+        <title>Document</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css" />
-    <title>Document</title>
-</head>
-
-<body>
-    <div id="homeButtonContainer" class="go-to-home">
-        <button class="button go-home hide" value="Go To HOME">Go To HOME</button>
-    </div>
-    <div id="allBtnContainer">
-        <div class="buttonContainer">
-            <div class="mainHeading">
-                <h2 style="text-align: center; color: #4CAF50;">Data Structures</h2>
+    <body>
+        <div id="homeButtonContainer" class="go-to-home">
+            <button class="button go-home hide" value="Go To HOME">
+                Go To HOME
+            </button>
+        </div>
+        <div id="allBtnContainer">
+            <div class="buttonContainer">
+                <div class="mainHeading">
+                    <h2 style="text-align: center; color: #4caf50">
+                        Data Structures
+                    </h2>
+                </div>
+                <button class="button ds-btn" value="ARRAY">ARRAY</button>
+                <button class="button ds-btn" value="HASH TABLE">
+                    HASH TABLE
+                </button>
+                <button class="button ds-btn" value="STACK">STACK</button>
+                <button class="button ds-btn" value="QUEUE">QUEUE</button>
+                <button class="button ds-btn" value="LINKEDLIST">
+                    LINKEDLIST
+                </button>
+                <button class="button ds-btn" value="DOUBLY LINKEDLIST">
+                    DOUBLY LINKEDLIST
+                </button>
+                <button class="button ds-btn" value="BINARY SEARCH TREE">
+                    BINARY SEARCH TREE
+                </button>
+                <button class="button ds-btn" value="AVL BINARY SEARCH TREE">
+                    AVL BINARY SEARCH TREE
+                </button>
+                <button class="button ds-btn" value="MIN HEAP">HEAPS</button>
+                <button class="button ds-btn" value="GRAPHS">GRAPHS</button>
             </div>
-            <button class="button ds-btn" value="ARRAY">ARRAY</button>
-            <button class="button ds-btn" value="HASH TABLE">HASH TABLE</button>
-            <button class="button ds-btn" value="STACK">STACK</button>
-            <button class="button ds-btn" value="QUEUE">QUEUE</button>
-            <button class="button ds-btn" value="LINKEDLIST">LINKEDLIST</button>
-            <button class="button ds-btn" value="DOUBLY LINKEDLIST">DOUBLY LINKEDLIST</button>
-            <button class="button ds-btn" value="BINARY SEARCH TREE">BINARY SEARCH TREE</button>
-            <button class="button ds-btn" value="AVL BINARY SEARCH TREE">AVL BINARY SEARCH TREE</button>
-            <button class="button ds-btn" value="MIN HEAP">HEAPS</button>
-            <button class="button ds-btn" value="GRAPHS">GRAPHS</button>
+
+            <div class="buttonContainer">
+                <div class="mainHeading">
+                    <h2 style="text-align: center; color: darkcyan">
+                        Sorting Algorithms
+                    </h2>
+                </div>
+                <button class="button ds-btn srt-btn" value="BUBBLE SORT">
+                    BUBBLE SORT
+                </button>
+                <button class="button ds-btn srt-btn" value="SELECTION SORT">
+                    SELECTION SORT
+                </button>
+                <button class="button ds-btn srt-btn" value="INSERTION SORT">
+                    INSERTION SORT
+                </button>
+                <button class="button ds-btn srt-btn" value="MERGE SORT">
+                    MERGE SORT
+                </button>
+                <button class="button ds-btn srt-btn" value="QUICK SORT">
+                    QUICK SORT
+                </button>
+            </div>
+
+            <div class="buttonContainer">
+                <div class="mainHeading">
+                    <h2 style="text-align: center; color: slateblue">
+                        Searching Algorithms
+                    </h2>
+                </div>
+                <button class="button ds-btn srh-btn" value="BFS">
+                    BFS(BREADTH FIRST SEARCH)
+                </button>
+                <button class="button ds-btn srh-btn" value="DFS">
+                    DFS(DEPTH FIRST SEARCH)
+                </button>
+                <button class="button ds-btn srh-btn" value="DIJKSTRA">
+                    DIJKSTRA
+                </button>
+                <button class="button ds-btn srh-btn" value="BELLMAN-FORD">
+                    BELLMAN-FORD
+                </button>
+                <button
+                    class="button ds-btn dp-btn"
+                    value="DYNAMIC PROGRAMMING"
+                >
+                    DYNAMIC PROGRAMMING
+                </button>
+            </div>
         </div>
 
-        <div class="buttonContainer">
-            <div class="mainHeading">
-                <h2 style="text-align: center; color: darkcyan;">Sorting Algorithms</h2>
-            </div>
-            <button class="button ds-btn srt-btn" value="BUBBLE SORT">BUBBLE SORT</button>
-            <button class="button ds-btn srt-btn" value="SELECTION SORT">SELECTION SORT</button>
-            <button class="button ds-btn srt-btn" value="INSERTION SORT">INSERTION SORT</button>
-            <button class="button ds-btn srt-btn" value="MERGE SORT">MERGE SORT</button>
-            <button class="button ds-btn srt-btn" value="QUICK SORT">QUICK SORT</button>
+        <div id="complexityContainer" style="text-align: center" class="hide">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Data Structure</th>
+                        <th colspan="8">Time Complexity</th>
+                        <th>Space Complexity</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th colspan="4">Average</th>
+                        <th colspan="4">Worst</th>
+                        <th>Worst</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>Access</th>
+                        <th>Search</th>
+                        <th>Insertion</th>
+                        <th>Deletion</th>
+                        <th>Access</th>
+                        <th>Search</th>
+                        <th>Insertion</th>
+                        <th>Deletion</th>
+                        <th></th>
+                    </tr>
+
+                    <tr id="complexityData"></tr>
+                </tbody>
+            </table>
         </div>
+        <div
+            id="sortComplexityContainer"
+            style="text-align: center"
+            class="hide"
+        >
+            <table class="table sort-table">
+                <tbody>
+                    <tr>
+                        <th>Sorting Algorithms</th>
+                        <th colspan="3">Time Complexity</th>
+                        <th>Space Complexity</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th colspan="1">Best</th>
+                        <th colspan="1">Average</th>
+                        <th colspan="1">Worst</th>
+                        <th>Worst</th>
+                    </tr>
 
-        <div class="buttonContainer">
-            <div class="mainHeading">
-                <h2 style="text-align: center; color: slateblue;">Searching Algorithms</h2>
-            </div>
-            <button class="button ds-btn srh-btn" value="BFS">BFS(BREADTH FIRST SEARCH)</button>
-            <button class="button ds-btn srh-btn" value="DFC">DFS(DEPTH FIRST SEARCH)</button>
-            <button class="button ds-btn srh-btn" value="DIJKSTRA">DIJKSTRA</button>
-            <button class="button ds-btn srh-btn" value="BELLMAN-FORD">BELLMAN-FORD</button>
-            <button class="button ds-btn dp-btn" value="DYNAMIC PROGRAMMING">DYNAMIC PROGRAMMING</button>
+                    <tr id="sortComplexityData"></tr>
+                </tbody>
+            </table>
         </div>
-    </div>
-
-    <div id="complexityContainer" style="text-align: center;" class="hide">
-        <table class="table table-bordered">
-
-            <tbody>
-                <tr>
-                    <th>Data Structure</th>
-                    <th colspan="8">Time Complexity</th>
-                    <th>Space Complexity</th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th colspan="4">Average</th>
-                    <th colspan="4">Worst</th>
-                    <th>Worst</th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th>Access</th>
-                    <th>Search</th>
-                    <th>Insertion</th>
-                    <th>Deletion</th>
-                    <th>Access</th>
-                    <th>Search</th>
-                    <th>Insertion</th>
-                    <th>Deletion</th>
-                    <th></th>
-                </tr>
-
-                <tr id="complexityData">
-
-                </tr>
-
-            </tbody>
-        </table>
-    </div>
-    <div id="sortComplexityContainer" style="text-align: center;" class="hide">
-        <table class="table sort-table">
-
-            <tbody>
-                <tr>
-                    <th>Sorting Algorithms</th>
-                    <th colspan="3">Time Complexity</th>
-                    <th>Space Complexity</th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th colspan="1">Best</th>
-                    <th colspan="1">Average</th>
-                    <th colspan="1">Worst</th>
-                    <th>Worst</th>
-                </tr>
-
-                <tr id="sortComplexityData">
-
-                </tr>
-
-            </tbody>
-        </table>
-    </div>
-    <!-- array implementation starts here -->
-    <div data-type="ARRAY" class="codeSnippet hide">
-        <pre><code class="language-javascript" >
+        <!-- array implementation starts here -->
+        <div data-type="ARRAY" class="codeSnippet hide">
+            <pre><code class="language-javascript" >
       class Myarray {
         constructor(size) {
             (this.data = {}), (this.length = 0);
@@ -176,12 +215,12 @@
     console.log(array1.filter((element) => element > 10));
   </code>
   </pre>
-    </div>
-    <!-- array implementation ends here -->
+        </div>
+        <!-- array implementation ends here -->
 
-    <!-- stack implementation starts here -->
-    <div data-type="STACK" class="hide codeSnippet">
-        <pre><code class="language-javascript" >
+        <!-- stack implementation starts here -->
+        <div data-type="STACK" class="hide codeSnippet">
+            <pre><code class="language-javascript" >
         class Mystack {
             constructor(){
                 this.count = 0;
@@ -231,12 +270,12 @@
         
   </code>
   </pre>
-    </div>
-    <!-- stack implementation ends here -->
+        </div>
+        <!-- stack implementation ends here -->
 
-    <!-- Linked List implementation starts here -->
-    <div data-type="LINKEDLIST" class="hide codeSnippet">
-        <pre><code class="language-javascript" >
+        <!-- Linked List implementation starts here -->
+        <div data-type="LINKEDLIST" class="hide codeSnippet">
+            <pre><code class="language-javascript" >
 // new node structure
 class Node {
     constructor(value) {
@@ -414,12 +453,12 @@ console.log(ll.reverse());
 console.log(ll.printLinkedList());
   </code>
   </pre>
-    </div>
-    <!-- Linked List implementation ends here -->
+        </div>
+        <!-- Linked List implementation ends here -->
 
-    <!-- Doubly Linked List implementation starts here -->
-    <div data-type="DOUBLY LINKEDLIST" class="hide codeSnippet">
-        <pre><code class="language-javascript" >
+        <!-- Doubly Linked List implementation starts here -->
+        <div data-type="DOUBLY LINKEDLIST" class="hide codeSnippet">
+            <pre><code class="language-javascript" >
         // new node structure
         class Node {
             constructor(value) {
@@ -565,12 +604,12 @@ console.log(ll.printLinkedList());
         console.log(ll.search(555));
   </code>
   </pre>
-    </div>
-    <!-- Doubly Linked List implementation ends here -->
+        </div>
+        <!-- Doubly Linked List implementation ends here -->
 
-    <!-- Hash Table implementation starts here -->
-    <div data-type="HASH TABLE" class="hide codeSnippet">
-        <pre><code class="language-javascript" >
+        <!-- Hash Table implementation starts here -->
+        <div data-type="HASH TABLE" class="hide codeSnippet">
+            <pre><code class="language-javascript" >
         class HashTable {
             constructor(size) {
                 this.data = new Array(size);
@@ -626,13 +665,12 @@ console.log(ll.printLinkedList());
         
   </code>
   </pre>
-    </div>
-    <!-- Hash Table implementation ends here -->
+        </div>
+        <!-- Hash Table implementation ends here -->
 
-
-    <!-- Binary Search Tree implementation starts here -->
-    <div data-type="BINARY SEARCH TREE" class="hide codeSnippet">
-        <pre><code class="language-javascript" >
+        <!-- Binary Search Tree implementation starts here -->
+        <div data-type="BINARY SEARCH TREE" class="hide codeSnippet">
+            <pre><code class="language-javascript" >
         class Node {
             constructor(value) {
                 this.value = value;
@@ -784,13 +822,12 @@ console.log(ll.printLinkedList());
         
   </code>
   </pre>
-    </div>
-    <!-- Binary Search Tree implementation ends here -->
+        </div>
+        <!-- Binary Search Tree implementation ends here -->
 
-
-    <!-- AVL Binary Search Tree implementation starts here -->
-    <div data-type="AVL BINARY SEARCH TREE" class="hide codeSnippet">
-        <pre><code class="language-javascript" > 
+        <!-- AVL Binary Search Tree implementation starts here -->
+        <div data-type="AVL BINARY SEARCH TREE" class="hide codeSnippet">
+            <pre><code class="language-javascript" > 
         class Node {
             constructor(value) {
                 this.value = value;
@@ -1020,13 +1057,12 @@ console.log(ll.printLinkedList());
         
   </code>
   </pre>
-    </div>
-    <!-- AVL Binary Search Tree implementation ends here -->
+        </div>
+        <!-- AVL Binary Search Tree implementation ends here -->
 
-
-    <!-- Queue implementation starts here -->
-    <div data-type="QUEUE" class="hide codeSnippet">
-        <pre><code class="language-javascript" >
+        <!-- Queue implementation starts here -->
+        <div data-type="QUEUE" class="hide codeSnippet">
+            <pre><code class="language-javascript" >
         class Node {
             constructor(value) {
                 this.value = value;
@@ -1085,13 +1121,12 @@ console.log(ll.printLinkedList());
         console.log(queue.peek()); 
   </code>
   </pre>
-    </div>
-    <!-- Queue implementation ends here -->
+        </div>
+        <!-- Queue implementation ends here -->
 
-
-    <!-- Min Heap implementation starts here -->
-    <div data-type="MIN HEAP" class="hide codeSnippet">
-        <pre><code class="language-javascript" >
+        <!-- Min Heap implementation starts here -->
+        <div data-type="MIN HEAP" class="hide codeSnippet">
+            <pre><code class="language-javascript" >
         class MinHeap {
             constructor() {
                 this.heap = [null];
@@ -1201,13 +1236,12 @@ console.log(ll.printLinkedList());
         
   </code>
   </pre>
-    </div>
-    <!-- Min Heap implementation ends here -->
+        </div>
+        <!-- Min Heap implementation ends here -->
 
-
-    <!-- Graphs implementation starts here -->
-    <div data-type="GRAPHS" class="hide codeSnippet">
-        <pre><code class="language-javascript" >
+        <!-- Graphs implementation starts here -->
+        <div data-type="GRAPHS" class="hide codeSnippet">
+            <pre><code class="language-javascript" >
         class Graph {
             constructor() {
                 this.numberOfNodes = 0;
@@ -1260,13 +1294,12 @@ console.log(ll.printLinkedList());
         
   </code>
   </pre>
-    </div>
-    <!-- Graphs implementation ends here -->
+        </div>
+        <!-- Graphs implementation ends here -->
 
-
-    <!-- bubble sort implementation starts here -->
-    <div data-type="BUBBLE SORT" class="hide codeSnippet">
-        <pre><code class="language-javascript" >
+        <!-- bubble sort implementation starts here -->
+        <div data-type="BUBBLE SORT" class="hide codeSnippet">
+            <pre><code class="language-javascript" >
         function bubbleSort(array) {
             const length = array.length;
           
@@ -1288,13 +1321,12 @@ console.log(ll.printLinkedList());
         bubbleSort(numbers);         
   </code>
   </pre>
-    </div>
-    <!-- bubble sort implementation ends here -->
+        </div>
+        <!-- bubble sort implementation ends here -->
 
-
-    <!-- selection sort implementation starts here -->
-    <div data-type="SELECTION SORT" class="hide codeSnippet">
-        <pre><code class="language-javascript" >
+        <!-- selection sort implementation starts here -->
+        <div data-type="SELECTION SORT" class="hide codeSnippet">
+            <pre><code class="language-javascript" >
         function selectionSort(array) {
             const length = array.length;
         
@@ -1317,13 +1349,12 @@ console.log(ll.printLinkedList());
         selectionSort(numbers);        
   </code>
   </pre>
-    </div>
-    <!-- selection sort implementation ends here -->
+        </div>
+        <!-- selection sort implementation ends here -->
 
-
-    <!-- insertion sort implementation starts here -->
-    <div data-type="INSERTION SORT" class="hide codeSnippet">
-        <pre><code class="language-javascript" >
+        <!-- insertion sort implementation starts here -->
+        <div data-type="INSERTION SORT" class="hide codeSnippet">
+            <pre><code class="language-javascript" >
         function insetionSort(array) {
             const length = array.length;
         
@@ -1346,13 +1377,12 @@ console.log(ll.printLinkedList());
         insetionSort(numbers);        
   </code>
   </pre>
-    </div>
-    <!-- insertion sort implementation ends here -->
+        </div>
+        <!-- insertion sort implementation ends here -->
 
-
-    <!-- merge sort implementation starts here -->
-    <div data-type="MERGE SORT" class="hide codeSnippet">
-        <pre><code class="language-javascript" >
+        <!-- merge sort implementation starts here -->
+        <div data-type="MERGE SORT" class="hide codeSnippet">
+            <pre><code class="language-javascript" >
         function mergeSort(array) {
             if (array.length === 1) {
                 return array;
@@ -1388,13 +1418,12 @@ console.log(ll.printLinkedList());
           
   </code>
   </pre>
-    </div>
-    <!-- merge sort implementation ends here -->
+        </div>
+        <!-- merge sort implementation ends here -->
 
-
-    <!-- quick sort implementation starts here -->
-    <div data-type="QUICK SORT" class="hide codeSnippet">
-        <pre><code class="language-javascript" >
+        <!-- quick sort implementation starts here -->
+        <div data-type="QUICK SORT" class="hide codeSnippet">
+            <pre><code class="language-javascript" >
             function quickSort(array, lowerBound, upperBound) {
                 if (lowerBound &lt; upperBound) {
                     const partitionIndex = partition(array, lowerBound, upperBound);
@@ -1434,14 +1463,12 @@ console.log(ll.printLinkedList());
             console.log(quickSort(numbers, 0, 10));      
   </code>
   </pre>
-    </div>
-    <!-- quick sort implementation ends here -->
-
-
+        </div>
+        <!-- quick sort implementation ends here -->
 
         <!-- breadth first search implementation starts here -->
         <div data-type="BFS" class="hide codeSnippet">
-           <pre>
+            <pre>
                <code class="language-javascript" >
                 class Node {
                     constructor(value) {
@@ -1638,14 +1665,267 @@ console.log(ll.printLinkedList());
         <!-- breadth first search implementation ends here -->
 
 
+        <!-- depth first search implementation starts here -->
+        <div data-type="DFS" class="hide codeSnippet">
+            <pre>
+               <code class="language-javascript" >
+                class Node {
+                    constructor(value) {
+                        this.value = value;
+                        this.right = null;
+                        this.left = null;
+                    }
+                }
+                
+                class BinarySearchTree {
+                    constructor() {
+                        this.root = null;
+                    }
+                
+                    // insert element into BST
+                    insert(value) {
+                        const newNode = new Node(value);
+                
+                        if (!this.root) {
+                            this.root = newNode;
+                        } else {
+                            let currentNode = this.root;
+                            while (true) {
+                                if (value &lt; currentNode.value) {
+                                    if (!currentNode.left) {
+                                        currentNode.left = newNode;
+                                        return this;
+                                    }
+                                    currentNode = currentNode.left;
+                                }
+                
+                                if (value > currentNode.value) {
+                                    if (!currentNode.right) {
+                                        currentNode.right = newNode;
+                                        return this;
+                                    }
+                                    currentNode = currentNode.right;
+                                }
+                            }
+                        }
+                
+                        return this;
+                    }
+                
+                    // look up for node
+                    lookup(value) {
+                        if (!this.root) {
+                            return false;
+                        }
+                
+                        let currentNode = this.root;
+                        while (currentNode) {
+                            if (value > currentNode.value) {
+                                currentNode = currentNode.right;
+                            } else if (value &lt; currentNode.value) {
+                                currentNode = currentNode.left;
+                            } else if (value === currentNode.value) {
+                                return currentNode;
+                            }
+                        }
+                
+                        return false;
+                    }
+                
+                    // remove node
+                    remove(value) {
+                        if (!this.root) {
+                            return false;
+                        }
+                
+                        let currentNode = this.root;
+                        let parentNode = null;
+                
+                        while (currentNode) {
+                            if (value &lt; currentNode.value) {
+                                parentNode = currentNode;
+                                currentNode = currentNode.left;
+                            } else if (value > currentNode.value) {
+                                parentNode = currentNode;
+                                currentNode = currentNode.right;
+                            } else if (value === currentNode.value) {
+                                if (!currentNode.right) {
+                                    if (!parentNode) {
+                                        this.root = currentNode.left;
+                                    } else {
+                                        if (currentNode.value &lt; parentNode.value) {
+                                            parentNode.left = currentNode.left;
+                                        } else if (currentNode.value > parentNode.value) {
+                                            parentNode.right = currentNode.left;
+                                        }
+                                    }
+                                } else if (!currentNode.right.left) {
+                                    if (!parentNode) {
+                                        this.root = currentNode.left;
+                                    } else {
+                                        currentNode.right.left = currentNode.left;
+                                        if (currentNode.value &lt; parentNode.value) {
+                                            parentNode.left = currentNode.right;
+                                        } else if (currentNode.value > parentNode.value) {
+                                            parentNode.right = currentNode.right;
+                                        }
+                                    }
+                                } else {
+                                    let leftMost = currentNode.right.left;
+                                    let leftMostParent = currentNode.right;
+                                    while (leftMost.left !== null) {
+                                        leftMostParent = leftMost;
+                                        leftMost = leftMost.left;
+                                    }
+                
+                                    leftMostParent.left = leftMost.right;
+                                    leftMost.left = currentNode.left;
+                                    leftMost.right = currentNode.right;
+                
+                                    if (!parentNode) {
+                                        this.root = leftMost;
+                                    } else {
+                                        if (currentNode.value &lt; parentNode.value) {
+                                            parentNode.left = leftMost;
+                                        } else if (currentNode.value > parentNode.value) {
+                                            parentNode.right = leftMost;
+                                        }
+                                    }
+                                }
+                
+                                return true;
+                            }
+                        }
+                        return false;
+                    }
+                
+                    breadthFirstSearch() {
+                        let currentNode = this.root;
+                        let list = [];
+                        let queue = [];
+                
+                        queue.push(currentNode);
+                
+                        while (queue.length > 0) {
+                            currentNode = queue.shift();
+                            list.push(currentNode.value);
+                            if (currentNode.left) {
+                                queue.push(currentNode.left);
+                            }
+                            if (currentNode.right) {
+                                queue.push(currentNode.right);
+                            }
+                        }
+                
+                        return list;
+                    }
 
+                    breadthFirstSearchRecursive(queue, list) {
+                        if(!queue.length) {
+                            return list;
+                        }
+                        const currentNode = queue.shift();
+                
+                        if (currentNode.left) {
+                            queue.push(currentNode.left);
+                        }
+                        if (currentNode.right) {
+                            queue.push(currentNode.right);
+                        }
+                
+                        list.push(currentNode.value);
+                
+                        return this.breadthFirstSearchRecursive(queue, list);
+                    }
 
-
-
-    <div class="bottom-container">
-        <a href="https://github.com/naveenrawat51/implement_DSA_JavaScript" target="_blank">Visit Repo</a>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
-</body>
-
+                    // PreOrder DFS
+                    depthFirstSearchPreOrder() {
+                        return this.traversePreOrder(this.root, []);
+                    }
+                
+                    // InOrder DFS
+                    depthFirstSearchInOrder() {
+                        return this.traverseInOrder(this.root, []);
+                    }
+                
+                    // PostOrder DFS
+                    depthFirstSearchPostOrder() {
+                        return this.traversePostOrder(this.root, []);
+                    }
+                
+                    // PreOrder Traverse
+                    traversePreOrder(node, list) {
+                        list.push(node.value);
+                        if (node.left) {
+                            this.traversePreOrder(node.left, list);
+                        }
+                        if (node.right) {
+                            this.traversePreOrder(node.right, list);
+                        }
+                
+                        return list;
+                    }
+                
+                    // InOrder Traverse
+                    traverseInOrder(node, list) {
+                        if (node.left) {
+                            this.traverseInOrder(node.left, list);
+                        }
+                        list.push(node.value);
+                        if (node.right) {
+                            this.traverseInOrder(node.right, list);
+                        }
+                
+                        return list;
+                    }
+                
+                    // PostOrder traverse
+                    traversePostOrder(node, list) {
+                        if (node.left) {
+                            this.traversePostOrder(node.left, list);
+                        }
+                        if (node.right) {
+                            this.traversePostOrder(node.right, list);
+                        }
+                        list.push(node.value);
+                
+                        return list;
+                    }
+                }
+                
+                const bst1 = new BinarySearchTree();
+                bst1.insert(9);
+                bst1.insert(4);
+                bst1.insert(6);
+                bst1.insert(20);
+                bst1.insert(170);
+                bst1.insert(15);
+                bst1.insert(1);
+                bst1.insert(13);
+                bst1.insert(17);
+                bst1.insert(89);
+                bst1.insert(90);
+                bst1.insert(220);
+                bst1.insert(190);
+                console.log(bst1.insert(8));
+                console.log(bst1.remove(9));
+                console.log(bst1.lookup(9));
+                console.log(bst1.breadthFirstSearch());
+                console.log(bst1.breadthFirstSearchRecursive([bst1.root], []));
+                console.log('preOrder: ', bst1.depthFirstSearchPreOrder());
+                console.log('inOrder: ', bst1.depthFirstSearchInOrder());
+                console.log('PostOrder: ', bst1.depthFirstSearchPostOrder());
+               </code>
+           </pre>
+        </div>
+        <!-- depth first search implementation ends here -->
+        <div class="bottom-container">
+            <a
+                href="https://github.com/naveenrawat51/implement_DSA_JavaScript"
+                target="_blank"
+                >Visit Repo</a
+            >
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+    </body>
 </html>
