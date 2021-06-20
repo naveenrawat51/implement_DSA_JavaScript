@@ -101,6 +101,8 @@ window.addEventListener('click', (event) => {
                     return;
                 case 'QUICK SORT':
                     showComplexity(sortComplexityData.quickSort, 'sort');
+                case 'HEAP SORT':
+                    showComplexity(sortComplexityData.heapSort, 'sort');
             }
         });
 
