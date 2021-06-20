@@ -52,3 +52,14 @@ export const quickSort = {
         { color: 'yellow-green', complexity: 'Θ(log(n))' },
     ],
 };
+
+export const heapSort = {
+    type: 'Heap sort',
+    url: 'https://en.wikipedia.org/wiki/Heapsort',
+    complexityData: [
+        { color: 'orange', complexity: 'Θ(n log(n))' },
+        { color: 'orange', complexity: 'Θ(n log(n))' },
+        { color: 'orange', complexity: 'Θ(n log(n))' },
+        { color: 'green', complexity: 'Θ(1)' },
+    ],
+};
