@@ -1,20 +1,18 @@
-function insetionSort(array) {
-    const length = array.length;
+var insetionSort = function (array) {
+    for (let i = 0; i < array.length; i++) {
+        let j = i - 1;
+        let temp = array[i];
 
-    for (let i = 0; i < length; i++) {
-        if (array[0] > array[i]) {
-            array.unshift(array.splice(i, 1)[0]);
-        } else {
-            for (let j = 1; j < i; j++) {
-                if (array[i] < array[j]) {
-                    array.splice(j, 0, array.splice(i, 1)[0]);
-                }
-            }
+        while (j >= 0 && array[j] > temp) {
+            array[j + 1] = array[j];
+            j--;
         }
+
+        array[j + 1] = temp;
     }
 
     return array;
-}
+};
 
 const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 insetionSort(numbers);
